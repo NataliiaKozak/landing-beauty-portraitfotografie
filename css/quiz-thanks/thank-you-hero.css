@@ -1,0 +1,65 @@
+/* ============================================================================
+   THANK YOU HERO - Страница благодарности
+   ============================================================================ */
+
+/* Секция */
+.thank-you-hero {
+  padding: 50px 0 60px;
+}
+
+.thank-you-hero__content {
+  max-width: 520px;
+}
+
+.thank-you-hero__title {
+  margin: 0 0 16px;
+}
+
+.thank-you-hero__description {
+  margin: 0 0 16px;
+  line-height: var(--line-height-normal);
+}
+
+.thank-you-hero__desc-after {
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+/* Фото справа */
+.thank-you-hero__image-wrapper {
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.thank-you-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thank-you-hero__secondary-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .thank-you-hero__content {
+    max-width: none; /* до правого края */
+    text-align: left;
+  }
+
+  .thank-you-hero .btn-primary-custom,
+  .thank-you-hero .btn-outline-custom {
+    width: 100%; /* как в форме */
+    justify-content: center;
+  }
+
+  .thank-you-hero__secondary-buttons {
+    gap: 12px;
+  }
+}

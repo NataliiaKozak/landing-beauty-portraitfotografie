@@ -1,0 +1,64 @@
+.process-card {
+  background: var(--color-white);
+  border-radius: 10px;
+  padding: 28px 28px 26px;
+  position: relative;
+  min-height: 200px; /*  чтобы карточки смотрелись ровнее */
+}
+
+/* квадрат с номером */
+.process-card__num {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  background: var(--brand-secondary);
+  color: var(--brand-text);
+  font-weight: var(--font-weight-bold);
+  font-size: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* в левом верхнем углу */
+  position: absolute;
+  top: 18px;
+  left: 18px;
+}
+
+/* текст внутри */
+.process-card__text {
+  /* отступ слева/сверху, чтобы текст не налезал на номер */
+  padding-left: 66px; /* 44 + отступ */
+  padding-top: 2px;
+}
+
+/* нижняя строка */
+.process-note {
+  line-height: var(--line-height-normal);
+}
+
+.process-note__accent {
+  color: #992b0a; /* красный "Fertig!" как на макете */
+  font-weight: var(--font-weight-bold);
+  margin-right: 6px;
+}
+
+.process .row > [class*='col-'] {
+  align-self: stretch;
+}
+/* ===== адаптив: больше отступ читаемость ===== */
+@media (max-width: 991.98px) {
+  .process-card {
+    padding: 24px 22px 22px;
+  }
+
+  .process-card__num {
+    top: 16px;
+    left: 16px;
+  }
+
+  .process-card__text {
+    padding-left: 62px;
+  }
+}

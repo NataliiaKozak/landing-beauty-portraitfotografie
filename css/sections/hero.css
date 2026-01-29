@@ -1,0 +1,145 @@
+/* ============================================================================
+   HERO (Section 1)
+   FIXES:
+   1) фото во всю высоту секции (десктоп)
+   2) без "фокуса на лице" => object-position: center
+   3) divider перенесён в hero
+   4) убраны "дыры/слиплось" из-за растягивания grid-рядов
+   5) <991: стабильное кадрирование без скачков на 565/576
+   ============================================================================ */
+
+.hero {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+/* DESKTOP (>=992) */
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  /* COMMENT: ключевое — второй ряд 1fr, чтобы фото было по высоте секции,
+     а ряды не растягивались странно */
+  grid-template-rows: auto 1fr;
+
+  grid-template-areas:
+    'title media'
+    'body  media';
+
+  height: 100vh;
+
+  /* COMMENT: важно — не "stretch", иначе появляются огромные дыры */
+  align-content: start;
+}
+
+/* LEFT */
+.hero__title-area {
+  grid-area: title;
+  padding-left: clamp(20px, 3vw, 60px);
+  padding-right: clamp(20px, 3vw, 60px);
+
+  /* COMMENT: место под абсолютный header (лого сверху) */
+  padding-top: 110px;
+
+  padding-bottom: 18px;
+}
+
+.hero__divider {
+  width: 86px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.6);
+
+  /* COMMENT: расстояние от divider до заголовка */
+  margin-bottom: 22px;
+}
+
+.hero__title {
+  margin: 0; /* COMMENT: без лишних провалов */
+}
+
+.hero__body-area {
+  grid-area: body;
+  padding-left: clamp(20px, 3vw, 60px);
+  padding-right: clamp(20px, 3vw, 60px);
+
+  /* COMMENT: чтобы текст не прилипал к нижнему бордеру */
+  padding-bottom: 80px;
+
+  max-width: 520px;
+}
+
+/* COMMENT: нормализуем расстояния между блоками */
+.hero__lead {
+  margin: 0 0 14px 0;
+}
+
+.hero__text {
+  margin: 0 0 26px 0; /* больше воздуха перед кнопкой */
+}
+
+.hero__btn {
+  margin: 0 0 22px 0; /* воздух после кнопки */
+}
+
+.hero__note {
+  margin: 0;
+}
+
+/* RIGHT (image) */
+.hero__media {
+  grid-area: media;
+  overflow: hidden;
+  height: 100%;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+
+  /* COMMENT: убрали “центрирование на лице” */
+  object-position: center;
+}
+
+/* ============================================================================
+   <992: в колонку (Title -> Photo -> Text/Button)
+   FIX: стабильное кадрирование без скачков на 565/576
+   ============================================================================ */
+
+@media (max-width: 991.98px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      'title'
+      'media'
+      'body';
+
+    height: auto;
+  }
+
+  .hero__title-area {
+    padding-top: 20px; /* header уже в потоке на мобилке */
+    padding-bottom: 14px;
+  }
+
+  /* COMMENT: вместо 56vh/46vh делаем высоту от ширины —
+     это убирает “разъезжание” кадра на 828/565/428 */
+  .hero__media {
+    height: min(95vw, 760px);
+  }
+
+  .hero__body-area {
+    max-width: none;
+
+    /* COMMENT: чтобы текст точно не прилипал к бордеру */
+    padding-bottom: 56px;
+    padding-top: 14px;
+  }
+
+  .hero__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

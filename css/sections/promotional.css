@@ -1,0 +1,92 @@
+.promotional__grid {
+  display: grid;
+
+  /* 2 колонки как по макету */
+  grid-template-columns: 1.25fr 0.75fr;
+
+  /* 3 ряд.
+     1-й и 2-й = равные (это и даёт "середину" вертикального фото),
+     3-й = авто по высоте текста.
+     (520px вертикального фото делится на 260/260) */
+  grid-template-rows: 260px 260px auto;
+
+  column-gap: 40px;
+  row-gap: 24px;
+}
+
+.promotional__title {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0; /* чтобы не мешали дефолтные отступы */
+}
+
+.promotional__photo {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.promotional__photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Вертикальное фото: 2 верхних ряда справа */
+.promotional__photo--tall {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  height: 100%;
+}
+
+/* Горизонтальное фото */
+.promotional__photo--wide {
+  grid-column: 1;
+  grid-row: 2 / 4;
+  height: 100%;
+}
+
+/* Текст: справа снизу */
+.promotional__text {
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0;
+}
+
+.promotional__cta {
+  margin-top: 28px; /* кнопка ниже контента */
+}
+
+/* ============================================================================
+   ADAPTIVE: < 992 
+   ============================================================================ */
+@media (max-width: 991.98px) {
+  .promotional__grid {
+    display: block;
+  }
+
+  .promotional__title {
+    margin-bottom: 16px;
+  }
+
+  .promotional__photo--wide,
+  .promotional__photo--tall {
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  /* чтобы изображения не схлопывались по высоте */
+  .promotional__photo--wide img {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  .promotional__photo--tall img {
+    aspect-ratio: 3 / 4;
+    height: auto;
+  }
+
+  .promotional__cta {
+    margin-top: 18px;
+  }
+}

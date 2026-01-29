@@ -1,0 +1,70 @@
+/* =========================
+   HEADER (Logo)
+   ========================= */
+
+.site-header {
+  padding: 22px 0 10px; /* лого сверху, без большой “шапки” */
+}
+
+.site-header__logo {
+  text-decoration: none;
+  color: var(--brand-text);
+}
+
+.site-header__logo:hover {
+  opacity: 0.85;
+}
+
+/* ==========================================================
+   HERO MODE: на десктопе header "лежит" поверх hero
+   - справа фото должно начинаться с самого верха
+   - фон header рисуем только на левой половине
+   ========================================================== */
+
+.site-header--hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent; /* не закрашиваем правую часть над фото */
+  z-index: 50;
+}
+
+/* левая половина фона */
+.site-header--hero::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 50%;
+  background: var(--brand-primary);
+}
+
+/* контейнер ограничиваем левой половиной */
+.site-header--hero .container {
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  margin-left: 0;
+
+  /* чтобы совпало с hero внутренними отступами */
+  max-width: none;
+  padding-left: clamp(20px, 3vw, 60px);
+  padding-right: clamp(20px, 3vw, 60px);
+}
+
+/* ==========================================================
+   Mobile: header обычный (в потоке), на всю ширину
+   ========================================================== */
+@media (max-width: 991.98px) {
+  .site-header--hero {
+    position: static;
+  }
+
+  .site-header--hero::before {
+    width: 100%;
+  }
+
+  .site-header--hero .container {
+    width: 100%;
+  }
+}
