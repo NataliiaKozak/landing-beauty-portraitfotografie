@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Beauty & Portrait Fotoshooting" />
     <meta name="keywords" content="Beauty & Portrait Fotoshooting, kostenlos" />
-    <title>Hochzeitsfotografen</title>
+    <title>Beauty & Portrait Fotoshooting</title>
 
     <!-- Security Headers -->
     <meta
@@ -54,6 +54,7 @@
 
     <!-- Section-specific CSS -->
     <link href="css/sections/header.css" rel="stylesheet" />
+    <link href="css/sections/photos.css" rel="stylesheet" />
     <link href="css/sections/hero.css" rel="stylesheet" />
     <link href="css/sections/promotional.css" rel="stylesheet" />
     <link href="css/sections/benefits.css" rel="stylesheet" />
@@ -85,70 +86,131 @@
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
 
     <section class="hero bg-brand-primary">
-      <div class="hero__grid">
-        <!-- TITLE -->
-        <div class="hero__title-area">
-          <div
-            class="hero__divider"
-            aria-hidden="true"
-            data-reveal
-            data-reveal-delay="0"
-          ></div>
-          <h1 class="text-h1 hero__title" data-reveal data-reveal-delay="80">
-            KOSTENLOSES<br />
-            Beauty- &amp; Portrait-<br />
-            Fotoshooting
-          </h1>
+      <div class="container">
+        <div class="hero__grid">
+          <!-- TITLE -->
+          <div class="hero__title-area">
+            <div
+              class="hero__divider"
+              aria-hidden="true"
+              data-reveal
+              data-reveal-delay="0"
+            ></div>
+            <h1 class="text-h2 hero__title" data-reveal data-reveal-delay="80">
+              <span class="hero__title-top">KOSTENLOSES</span>
+              <span class="hero__title-desktop">
+                <span>Beauty- &amp; Portrait-</span>
+                <span>Fotoshooting</span>
+              </span>
+
+              <!-- TABLET+MOBILE (<992): Portrait-Fotoshooting НЕ разрывается -->
+              <span class="hero__title-mobile">
+                Beauty- &amp;
+                <span class="hero__nowrap">Portrait-Fotoshooting</span>
+              </span>
+            </h1>
+          </div>
+
+          <!-- IMAGE (анимируем) -->
+          <div class="hero__media" data-reveal data-reveal-delay="160">
+            <img
+              class="hero__image"
+              src="assets/images/13.jpg"
+              alt="Beauty & Portrait Fotoshooting"
+            />
+          </div>
+
+          <!-- TEXT + BUTTON -->
+          <div class="hero__body-area">
+            <p
+              class="text-bold-small hero__lead"
+              data-reveal
+              data-reveal-delay="240"
+            >
+              Jetzt Termin für dein exklusives Fotoshooting bei Larissin sichern
+              – regulärer Preis 240 €, aktuell kostenlos!
+            </p>
+
+            <p
+              class="text-medium-small hero__text"
+              data-reveal
+              data-reveal-delay="320"
+            >
+              Die kostenlosen Fotoshootings haben begrenzte Plätze und finden
+              nur bis zum 20.12.2025 statt!
+            </p>
+
+            <a
+              href="quiz-1.html"
+              class="btn-primary-custom text-bold-small hero__btn"
+              data-reveal
+              data-reveal-delay="480"
+            >
+              Kostenloses Shooting sichern
+            </a>
+
+            <p
+              class="text-medium-small hero__note"
+              data-reveal
+              data-reveal-delay="480"
+            >
+              <strong>Warum kostenlos?</strong> Damit du ganz ohne Risiko meine
+              Qualität testen kannst: Das Fotoshooting ist gratis, und nur die
+              Fotos, die dir gefallen, kannst du anschließend erwerben – ganz
+              ohne Kaufzwang.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <!-- IMAGE (анимируем) -->
-        <div class="hero__media" data-reveal data-reveal-delay="160">
-          <img
-            class="hero__image"
-            src="assets/images/54.jpg"
-            alt="Beauty & Portrait Fotoshooting"
-          />
+    <!-- SECTION 2
+     ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║  PHOTOS (3 vertical)       section-padding
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <!-- <section class="photos bg-brand-primary">
+      <div class="container">
+        <div class="photos__grid">
+          <div class="photos__item" data-reveal data-reveal-delay="0">
+            <img src="assets/images/2.jpg" alt="Portraitfoto 1" />
+          </div>
+
+          <div class="photos__item" data-reveal data-reveal-delay="160">
+            <img src="assets/images/25.jpg" alt="Portraitfoto 2" />
+          </div>
+
+          <div class="photos__item" data-reveal data-reveal-delay="320">
+            <img src="assets/images/15.jpg" alt="Portraitfoto 3" />
+          </div>
         </div>
+      </div>
+    </section> -->
 
-        <!-- TEXT + BUTTON -->
-        <div class="hero__body-area">
-          <p
-            class="text-bold-small hero__lead"
-            data-reveal
-            data-reveal-delay="240"
-          >
-            Jetzt Termin für dein exklusives Fotoshooting bei Larissin sichern –
-            regulärer Preis 240 €, aktuell kostenlos!
-          </p>
+    <section class="photos bg-brand-primary section-padding">
+      <div class="container">
+        <!-- COMMENT: g-4 = одинаковый gap между колонками/рядами -->
+        <div class="row g-4">
+          <!-- Desktop: 3 в ряд -->
+          <!-- Tablet: 2 в ряд -->
+          <!-- Mobile: 1 в ряд -->
+          <div class="col-lg-4 col-md-6" data-reveal data-reveal-delay="0">
+            <div class="photos__item">
+              <img src="assets/images/2.jpg" alt="Portraitfoto 1" />
+            </div>
+          </div>
 
-          <p
-            class="text-medium-small hero__text"
-            data-reveal
-            data-reveal-delay="320"
-          >
-            Die kostenlosen Fotoshootings haben begrenzte Plätze und finden nur
-            bis zum 20.12.2025 statt!
-          </p>
+          <div class="col-lg-4 col-md-6" data-reveal data-reveal-delay="160">
+            <div class="photos__item">
+              <img src="assets/images/25.jpg" alt="Portraitfoto 2" />
+            </div>
+          </div>
 
-          <a
-            href="quiz-1.html"
-            class="btn-primary-custom text-bold-small hero__btn"
-            data-reveal
-            data-reveal-delay="480"
-          >
-            Kostenloses Shooting sichern
-          </a>
-
-          <p
-            class="text-medium-small hero__note"
-            data-reveal
-            data-reveal-delay="480"
-          >
-            <strong>Warum kostenlos?</strong> Damit du ganz ohne Risiko meine
-            Qualität testen kannst: Das Fotoshooting ist gratis, und nur die
-            Fotos, die dir gefallen, kannst du anschließend erwerben – ganz ohne
-            Kaufzwang.
-          </p>
+          <!-- COMMENT: на md делаем на всю ширину, чтобы получилось “2 + 1” -->
+          <div class="col-lg-4 col-md-12" data-reveal data-reveal-delay="240">
+            <div class="photos__item photos__item--center-md">
+              <img src="assets/images/15.jpg" alt="Portraitfoto 3" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

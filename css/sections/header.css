@@ -41,15 +41,15 @@
 
 /* контейнер ограничиваем левой половиной */
 .site-header--hero .container {
-  position: relative;
+  /* position: relative;
   z-index: 1;
   width: 50%;
   margin-left: 0;
-
-  /* чтобы совпало с hero внутренними отступами */
-  max-width: none;
+   max-width: none;
   padding-left: clamp(20px, 3vw, 60px);
-  padding-right: clamp(20px, 3vw, 60px);
+  padding-right: clamp(20px, 3vw, 60px); */
+  position: relative;
+  z-index: 1;
 }
 
 /* ==========================================================
@@ -64,7 +64,7 @@
     width: 100%;
   }
 
-  .site-header--hero .container {
+  /* .site-header--hero .container {
     width: 100%;
-  }
+  } */
 }
