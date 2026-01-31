@@ -1,7 +1,6 @@
 // Common JavaScript functionality for all landings
 
-document.addEventListener('DOMContentLoaded', function() {
-
+document.addEventListener('DOMContentLoaded', function () {
   // Gallery Slider Functionality
   const galleryTrack = document.querySelector('.gallery-track');
   const galleryArrows = document.querySelectorAll('.gallery-arrow');
@@ -39,11 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
       // Update arrow visibility
       const leftArrow = document.querySelector('.gallery-arrow-left');
       const rightArrow = document.querySelector('.gallery-arrow-right');
-      if (leftArrow) leftArrow.style.opacity = currentIndex === 0 ? '0.3' : '0.8';
-      if (rightArrow) rightArrow.style.opacity = currentIndex >= maxIndex ? '0.3' : '0.8';
+      if (leftArrow)
+        leftArrow.style.opacity = currentIndex === 0 ? '0.3' : '0.8';
+      if (rightArrow)
+        rightArrow.style.opacity = currentIndex >= maxIndex ? '0.3' : '0.8';
     }
 
-    galleryArrows.forEach(arrow => {
+    galleryArrows.forEach((arrow) => {
       arrow.addEventListener('click', () => {
         const direction = arrow.dataset.direction;
         slidesPerView = getSlidesPerView();
@@ -73,62 +74,80 @@ document.addEventListener('DOMContentLoaded', function() {
   // FAQ Toggle Functionality (original faq section)
   const faqItems = document.querySelectorAll('.faq-item');
 
-  faqItems.forEach(item => {
+  faqItems.forEach((item) => {
     const question = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
-    const toggle = item.querySelector('.faq-toggle');
 
-    if (question && answer && toggle) {
-      question.addEventListener('click', () => {
-        const isOpen = !answer.classList.contains('d-none');
+    if (!question || !answer) return;
 
-        if (isOpen) {
-          answer.classList.add('d-none');
-          toggle.textContent = '+';
-          question.setAttribute('aria-expanded', 'false');
-        } else {
-          answer.classList.remove('d-none');
-          toggle.textContent = '−';
-          question.setAttribute('aria-expanded', 'true');
+    // чтобы не было двойной инициализации, если common.js подключён/выполняется дважды
+    if (question.dataset.faqBound === '1') return;
+    question.dataset.faqBound = '1';
+
+    question.addEventListener('click', () => {
+      const isOpen = !answer.classList.contains('d-none');
+
+      // закрываем все остальные (аккордеон)
+      faqItems.forEach((other) => {
+        if (other === item) return;
+
+        const otherAnswer = other.querySelector('.faq-answer');
+        const otherQuestion = other.querySelector('.faq-question');
+
+        if (otherAnswer && !otherAnswer.classList.contains('d-none')) {
+          otherAnswer.classList.add('d-none');
         }
+        if (otherQuestion) otherQuestion.setAttribute('aria-expanded', 'false');
+        other.classList.remove('active');
       });
-    }
+
+      // переключаем текущий
+      if (isOpen) {
+        answer.classList.add('d-none');
+        question.setAttribute('aria-expanded', 'false');
+        item.classList.remove('active');
+      } else {
+        answer.classList.remove('d-none');
+        question.setAttribute('aria-expanded', 'true');
+        item.classList.add('active');
+      }
+    });
   });
 
   // FAQ Cards Toggle Functionality (faq-cards section)
-  const faqCardItems = document.querySelectorAll('.faq-cards-item');
+  // const faqCardItems = document.querySelectorAll('.faq-cards-item');
 
-  faqCardItems.forEach(item => {
-    const question = item.querySelector('.faq-card-question');
-    const answer = item.querySelector('.faq-card-answer');
-    const toggleIcon = item.querySelector('.faq-card-toggle-icon');
+  // faqCardItems.forEach((item) => {
+  //   const question = item.querySelector('.faq-card-question');
+  //   const answer = item.querySelector('.faq-card-answer');
+  //   const toggleIcon = item.querySelector('.faq-card-toggle-icon');
 
-    if (question && answer && toggleIcon) {
-      question.addEventListener('click', () => {
-        const isOpen = !answer.classList.contains('d-none');
+  //   if (question && answer && toggleIcon) {
+  //     question.addEventListener('click', () => {
+  //       const isOpen = !answer.classList.contains('d-none');
 
-        if (isOpen) {
-          answer.classList.add('d-none');
-          toggleIcon.textContent = '+';
-          question.setAttribute('aria-expanded', 'false');
-        } else {
-          answer.classList.remove('d-none');
-          toggleIcon.textContent = '−';
-          question.setAttribute('aria-expanded', 'true');
-        }
-      });
-    }
-  });
+  //       if (isOpen) {
+  //         answer.classList.add('d-none');
+  //         toggleIcon.textContent = '▾';
+  //         question.setAttribute('aria-expanded', 'false');
+  //       } else {
+  //         answer.classList.remove('d-none');
+  //         toggleIcon.textContent = '▾';
+  //         question.setAttribute('aria-expanded', 'true');
+  //       }
+  //     });
+  //   }
+  // });
 
   // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         target.scrollIntoView({
           behavior: 'smooth',
-          block: 'start'
+          block: 'start',
         });
       }
     });
@@ -137,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Lazy loading for images
   const images = document.querySelectorAll('img[data-src]');
   const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const img = entry.target;
         if (img.dataset.src) {
@@ -149,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  images.forEach(img => {
+  images.forEach((img) => {
     imageObserver.observe(img);
   });
 });
