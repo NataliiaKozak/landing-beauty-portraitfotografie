@@ -293,11 +293,11 @@
       </div>
     </section> -->
 
-    <!-- 
+    <!-- SECTION 2
      ╔═══════════════════════════════════════════════════════════════════════════╗
      ║ PHOTOS (3 vertical) НА BOOTSTRAP
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-    <section class="photos bg-brand-primary section-padding">
+    <section class="photos bg-brand-primary pt-4 pt-md-5 pb-4">
       <div class="container">
         <!-- COMMENT: g-4 = одинаковый gap между колонками/рядами -->
         <div class="row g-4">
@@ -310,14 +310,14 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6" data-reveal data-reveal-delay="160">
+          <div class="col-lg-4 col-md-6" data-reveal data-reveal-delay="240">
             <div class="photos__item">
               <img src="assets/images/25.jpg" alt="Portraitfoto 2" />
             </div>
           </div>
 
           <!-- COMMENT: на md делаем на всю ширину, чтобы получилось “2 + 1” -->
-          <div class="col-lg-4 col-md-12" data-reveal data-reveal-delay="240">
+          <div class="col-lg-4 col-md-12" data-reveal data-reveal-delay="480">
             <div class="photos__item photos__item--center-md">
               <img src="assets/images/15.jpg" alt="Portraitfoto 3" />
             </div>
@@ -326,51 +326,85 @@
       </div>
     </section>
 
-    <!-- SECTION 2
-     ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║  PROMOTIONAL - Промо-секция          
-     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-    <section class="promotional section-padding">
+    <!-- SECTION 3
+╔═══════════════════════════════════════════════════════════════════════════╗
+║  PROMOTIONAL
+╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <section class="promotional bg-brand-primary pt-4 pb-4">
       <div class="container">
-        <div class="section-panel bg-brand-secondary">
-          <div class="promotional__grid">
-            <h2 class="text-h3 promotional__title">
-              Eure Liebe, eure Geschichte –<br />
-              einzigartig und unvergesslich<br />
-              festgehalten.
-            </h2>
+        <div class="row gx-lg-5 gy-4 align-items-start">
+          <!-- LEFT -->
+          <div class="col-lg-6">
+            <div class="promotional__content" data-reveal data-reveal-delay="0">
+              <div
+                class="promotional__divider"
+                aria-hidden="true"
+                data-reveal
+                data-reveal-delay="0"
+              ></div>
 
-            <!-- Горизонтальное фото (слева) -->
-            <div class="promotional__photo promotional__photo--wide">
-              <img
-                src="assets/images/1.jpg"
-                alt="Beauty & Portrait Fotoshooting"
-              />
+              <h2 class="text-h2 mb-3" data-reveal data-reveal-delay="80">
+                Deine Schönheit im<br />besten Licht!
+              </h2>
+
+              <p
+                class="text-medium-small mb-4"
+                data-reveal
+                data-reveal-delay="160"
+              >
+                Ein Fotoshooting für Frauen und Männer, die sich authentisch und
+                stilvoll zeigen wollen. Entdecke deine Einzigartigkeit in
+                entspannter Studioatmosphäre.
+              </p>
+
+              <p
+                class="text-bold-small promotional__accent mb-4"
+                data-reveal
+                data-reveal-delay="240"
+              >
+                Unvergessliche Erinnerungen schaffen!
+              </p>
+
+              <p
+                class="text-medium-small mb-4"
+                data-reveal
+                data-reveal-delay="360"
+              >
+                Entdecke deine Einzigartigkeit und Schönheit bei meinem
+                exklusiven Fotoshooting für Frauen. Ich nehme mir die Zeit, um
+                dich individuell zu präsentieren und deine Natürlichkeit
+                hervorzuheben.
+              </p>
+
+              <p
+                class="text-medium-small mb-4"
+                data-reveal
+                data-reveal-delay="360"
+              >
+                Sichere dir noch heute deinen Fotoshooting-Termin und genieße
+                deine Zeit bei mir!
+              </p>
+
+              <a
+                href="quiz-1.html"
+                class="btn-primary-custom text-bold-small promotional__btn"
+                data-reveal
+                data-reveal-delay="360"
+              >
+                Beauty- &amp; Portrait-Shooting kostenfrei starten
+              </a>
             </div>
-
-            <!-- Вертикальное фото (справа) -->
-            <div class="promotional__photo promotional__photo--tall">
-              <img
-                src="assets/images/16.jpg"
-                alt="Beauty & Portrait Fotoshooting"
-              />
-            </div>
-
-            <!-- Текст (справа снизу) -->
-            <p class="text-small promotional__text">
-              Mit unserer Erfahrung in der Hochzeitsfotografie schaffen wir
-              Erinnerungen, die ein Leben lang bleiben. Ob romantisch, elegant
-              oder modern – wir halten eure besondere Verbindung authentisch
-              fest und bewahren eure schönsten Momente.<br /><br />
-              Lasst euch von uns beraten und überzeugt euch von unserer
-              Professionalität.
-            </p>
           </div>
 
-          <div class="text-center promotional__cta">
-            <a href="quiz-1.html" class="btn-primary-custom text-bold-small"
-              >Mehr erfahren</a
-            >
+          <!-- RIGHT -->
+          <div class="col-lg-6" data-reveal data-reveal-delay="480">
+            <div class="promotional__media">
+              <img
+                class="promotional__image"
+                src="assets/images/23.jpg"
+                alt="Beauty Portrait"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -517,101 +551,6 @@
               />
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4 
-     ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║  GALLERY - Галерея изображений (gallery-swiper.js)  - 3 фото в слайдере   ║
-     ║  стили - gallery-triple.css  
-              
-     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-    <section
-      class="gallery gallery--triple section-padding bg-brand-primary"
-      aria-label="Fotogalerie"
-    >
-      <div class="container">
-        <div class="gallery-swiper-wrap">
-          <div class="swiper gallery-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="gallery-item">
-                  <img
-                    src="assets/images/7.jpg"
-                    alt="Beauty & Portrait Fotoshooting"
-                    class="img-fluid"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="gallery-item">
-                  <img
-                    src="assets/images/6.jpg"
-                    alt="Beauty & Portrait Fotoshooting"
-                    class="img-fluid"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="gallery-item">
-                  <img
-                    src="assets/images/15.jpg"
-                    alt="Beauty & Portrait Fotoshooting"
-                    class="img-fluid"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="gallery-item">
-                  <img
-                    src="assets/images/11.jpg"
-                    alt="Beauty & Portrait Fotoshooting"
-                    class="img-fluid"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="gallery-item">
-                  <img
-                    src="assets/images/10.jpg"
-                    alt="Beauty & Portrait Fotoshooting"
-                    class="img-fluid"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="gallery-item">
-                  <img
-                    src="assets/images/16.jpg"
-                    alt="Beauty & Portrait Fotoshooting"
-                    class="img-fluid"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- точки можно оставить, но для triple скроем в CSS -->
-            <div class="swiper-pagination"></div>
-          </div>
-
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-
-        <div class="text-center text-bold-small mt-4">
-          <a class="btn-primary-custom" href="quiz-1.html">Mehr erfahren</a>
         </div>
       </div>
     </section>
@@ -834,7 +773,7 @@
               <div class="swiper-slide">
                 <div class="gallery-item">
                   <img
-                    src="assets/images/14.jpg"
+                    src="assets/images/13.jpg"
                     alt="Beauty & Portrait Fotoshooting"
                     loading="lazy"
                   />
@@ -844,7 +783,7 @@
               <div class="swiper-slide">
                 <div class="gallery-item">
                   <img
-                    src="assets/images/17.jpg"
+                    src="assets/images/41.jpg"
                     alt="Beauty & Portrait Fotoshooting"
                     loading="lazy"
                   />
@@ -854,7 +793,7 @@
               <div class="swiper-slide">
                 <div class="gallery-item">
                   <img
-                    src="assets/images/15.jpg"
+                    src="assets/images/25.jpg"
                     alt="Beauty & Portrait Fotoshooting"
                     loading="lazy"
                   />
