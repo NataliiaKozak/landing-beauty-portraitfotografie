@@ -63,7 +63,7 @@
     <link href="css/sections/expectations.css" rel="stylesheet" />
     <link href="css/sections/process.css" rel="stylesheet" />
     <link href="css/sections/about.css" rel="stylesheet" />
-    <link href="css/sections/footer.css" rel="stylesheet" />
+    <!-- <link href="css/sections/footer.css" rel="stylesheet" /> -->
     <link href="css/sections/legal-footer.css" rel="stylesheet" />
     <link href="css/quiz-thanks/quiz-question.css" rel="stylesheet" />
     <link href="css/quiz-thanks/quiz-form.css" rel="stylesheet" />
@@ -330,7 +330,7 @@
 ╔═══════════════════════════════════════════════════════════════════════════╗
 ║  PROMOTIONAL
 ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-    <section class="promotional bg-brand-primary pt-4 pb-4">
+    <section class="promotional bg-brand-primary pt-4 pb-5 pb-lg-5">
       <div class="container">
         <div class="row gx-lg-5 gy-5 gy-lg-4 align-items-start">
           <!-- LEFT -->
@@ -414,278 +414,92 @@
       </div>
     </section>
 
-    <!-- SECTION 3
+    <!-- SECTION 4
      ╔═══════════════════════════════════════════════════════════════════════════╗
      ║  BENEFITS  - Секция с описанием и изображением                             ║
      ║ 
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-    <section class="benefits section-padding bg-brand-primary">
+
+    <section class="benefits section-padding bg-brand-secondary pt-5 pt-lg-5">
       <div class="container">
-        <div class="text-center mb-4">
-          <h2 class="text-h2 mb-2">Was du bei uns genießen wirst...</h2>
-          <p class="text-medium-small mb-0">
-            Wir sind nicht nur ein einfaches Fotostudio – wir sind deine Lösung!
-          </p>
-        </div>
-
-        <!-- без align-items-start, чтобы колонки могли тянуться по высоте -->
-        <div class="row g-5">
-          <!-- LEFT: cards -->
-          <div class="col-lg-7">
-            <!-- Card 1 -->
-            <div class="benefits__card">
-              <!-- отдельный див под иконку -->
-              <div class="benefits__icon-wrap">
+        <div class="row g-4 g-md-5 g-lg-5">
+          <!-- Card 1 -->
+          <div class="col-12 col-md-4" data-reveal data-reveal-delay="0">
+            <article class="benefits__card h-100">
+              <div class="benefits__media">
                 <img
-                  class="benefits__icon"
-                  src="assets/icons/heart.svg"
-                  alt=""
+                  class="benefits__image"
+                  src="assets/images/13.jpg"
+                  alt="Eintragen"
                 />
               </div>
 
-              <!-- под заголовок + текст -->
-              <div class="benefits__content">
-                <h3 class="text-bold-small benefits__title">
-                  Spaß und Wohlfühlen - Individuell angepasst
-                </h3>
-                <p class="text-small benefits__text">
-                  Unsere Hochzeits-Shootings sind Momente voller Freude und
-                  Emotionen. Wir schaffen eine entspannte Atmosphäre, in der ihr
-                  euch wohlfühlt und ganz ihr selbst sein könnt. Selbst wenn ihr
-                  euch vor der Kamera unsicher fühlt, helfen wir euch, eure
-                  Liebe authentisch und strahlend in Bildern festzuhalten.
-                </p>
-              </div>
-            </div>
+              <h2 class="text-h2 benefits__title mb-4 mb-md-0">
+                1.&nbsp;Eintragen
+              </h2>
 
-            <!-- Divider (DESKTOP only) -->
-            <div class="benefits__divider d-none d-lg-block"></div>
+              <!-- Линия (на мобилке скрываем в CSS) -->
+              <div class="benefits__divider" aria-hidden="true"></div>
 
-            <!-- Card 2 -->
-            <div class="benefits__card">
-              <div class="benefits__icon-wrap">
-                <img
-                  class="benefits__icon"
-                  src="assets/icons/badge-euro.svg"
-                  alt=""
-                />
-              </div>
-
-              <div class="benefits__content">
-                <h3 class="text-bold-small benefits__title">
-                  Hohe Qualität zu fairen Preisen
-                </h3>
-                <p class="text-small benefits__text">
-                  Unsere Hochzeits-Shootings bieten euch höchste Qualität zu
-                  einem fairen Preis. Mit einem professionellen Blick fürs
-                  Detail und modernster Technik schaffen wir Hochzeitsfotos, die
-                  eure schönsten Momente perfekt einfangen. Vom ersten Gespräch
-                  bis zur finalen Bearbeitung stehen wir für Qualität und
-                  Zuverlässigkeit.
-                </p>
-              </div>
-            </div>
-
-            <div class="benefits__divider d-none d-lg-block"></div>
-
-            <!-- Card 3 -->
-            <div class="benefits__card">
-              <div class="benefits__icon-wrap">
-                <img
-                  class="benefits__icon"
-                  src="assets/icons/wand-sparkles.svg"
-                  alt=""
-                />
-              </div>
-
-              <div class="benefits__content">
-                <h3 class="text-bold-small benefits__title">
-                  Kreativ und zuverlässig
-                </h3>
-                <p class="text-small benefits__text">
-                  Unsere Fotografen kombinieren Kreativität mit
-                  Organisationstalent, damit eure Hochzeitsbilder so einzigartig
-                  sind wie eure Liebe. Von romantischen Paaraufnahmen bis hin zu
-                  emotionalen Momenten mit Familie und Freunden setzen wir eure
-                  Hochzeit mit viel Liebe zum Detail in Szene.
-                </p>
-              </div>
-            </div>
-
-            <div class="benefits__divider d-none d-lg-block"></div>
-
-            <!-- Card 4 -->
-            <div class="benefits__card">
-              <div class="benefits__icon-wrap">
-                <img
-                  class="benefits__icon"
-                  src="assets/icons/thumbs-up.svg"
-                  alt=""
-                />
-              </div>
-
-              <div class="benefits__content">
-                <h3 class="text-bold-small benefits__title">
-                  Zufriedenheit und vielfältige Möglichkeiten
-                </h3>
-                <p class="text-small benefits__text">
-                  Eure Zufriedenheit ist unsere höchste Priorität. Ob klassisch,
-                  modern oder ausgefallen – wir passen uns euren Wünschen an und
-                  bieten zahlreiche Optionen, um eure Hochzeit unvergesslich zu
-                  machen. Gemeinsam gestalten wir ein Fotoshooting, das eure
-                  Persönlichkeit und eure Liebe perfekt widerspiegelt.
-                </p>
-              </div>
-            </div>
+              <p class="text-medium-small mb-0">
+                Trage dich ins Formular ein und sichere dir deinen Gutschein –
+                kostenlos &amp; unverbindlich.
+              </p>
+            </article>
           </div>
 
-          <!-- RIGHT: photos -->
-          <div class="col-lg-5 benefits__photos-col">
-            <div class="benefits__photo">
-              <img
-                src="assets/images/17.jpg"
-                alt="Beauty & Portrait Fotoshooting"
-              />
-            </div>
+          <!-- Card 2 -->
+          <div class="col-12 col-md-4" data-reveal data-reveal-delay="240">
+            <article class="benefits__card h-100">
+              <div class="benefits__media">
+                <img
+                  class="benefits__image"
+                  src="assets/images/20.jpg"
+                  alt="Shootingzeit"
+                />
+              </div>
 
-            <div class="benefits__photo">
-              <img
-                src="assets/images/14.jpg"
-                alt="Beauty & Portrait Fotoshooting"
-              />
-            </div>
+              <h2 class="text-h2 benefits__title mb-4 mb-md-0">
+                2.&nbsp;Shootingzeit
+              </h2>
+
+              <div class="benefits__divider" aria-hidden="true"></div>
+
+              <p class="text-medium-small mb-0">
+                30 Minuten Fotoshooting – vielfältige und einzigartige Aufnahmen
+                – auch mit Haustier möglich.
+              </p>
+            </article>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-12 col-md-4" data-reveal data-reveal-delay="480">
+            <article class="benefits__card h-100">
+              <div class="benefits__media">
+                <img
+                  class="benefits__image"
+                  src="assets/images/43.jpg"
+                  alt="Deine Bilder auswählen"
+                />
+              </div>
+
+              <h2 class="text-h2 benefits__title mb-4 mb-md-0">
+                3.&nbsp;Deine Bilder auswählen
+              </h2>
+
+              <div class="benefits__divider" aria-hidden="true"></div>
+
+              <p class="text-medium-small mb-0">
+                Nach dem Fotoshooting kannst du in Ruhe deine Lieblingsbilder
+                auswählen – ganz ohne Kaufzwang.
+              </p>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SECTION 5
-  ╔═══════════════════════════════════════════════════════════════════════════╗
-║  EXPECTATIONS - Unsere Leistungen (текст + белая панель с 2 фото)            ║
-╚═══════════════════════════════════════════════════════════════════════════╝ -->
-    <section
-      class="expectations section-padding"
-      aria-label="Unsere Leistungen"
-    >
-      <div class="container">
-        <div class="section-panel bg-brand-secondary expectations__panel-wrap">
-          <div class="row g-5 align-items-start">
-            <!-- LEFT -->
-            <div class="col-lg-7">
-              <h2 class="text-h2 expectations__title">Unsere Leistungen</h2>
-
-              <div class="expectations__list">
-                <div class="expectations__item">
-                  <img
-                    class="expectations__icon"
-                    src="assets/icons/heart.svg"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                  <p class="text-medium-small m-0">
-                    <strong class="text-bold-small"
-                      >Ausführliche Beratung:</strong
-                    >
-                    Vom ersten Vorgespräch über die Feierlichkeit bis hin zum
-                    finalen Bild – wir sind für euch da.
-                  </p>
-                </div>
-
-                <div class="expectations__item">
-                  <img
-                    class="expectations__icon"
-                    src="assets/icons/heart.svg"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                  <p class="text-medium-small m-0">
-                    <strong class="text-bold-small"
-                      >Rundum-Betreuung an eurem großen Tag:</strong
-                    >
-                    Vom Ankleiden und Styling über die Hochzeitszeremonie bis
-                    zum letzten Tanz – wir begleiten euch durch diesen Tag
-                    voller Ereignisse und Emotionen.
-                  </p>
-                </div>
-
-                <div class="expectations__item">
-                  <img
-                    class="expectations__icon"
-                    src="assets/icons/heart.svg"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                  <p class="text-medium-small m-0">
-                    <strong class="text-bold-small">Produktgarantie:</strong>
-                    Damit ihr ganz entspannt sein könnt: Wir sichern eure
-                    Aufnahmen doppelt – so lange, bis ihr eure Bilder sicher
-                    gespeichert habt.
-                  </p>
-                </div>
-
-                <div class="expectations__item">
-                  <img
-                    class="expectations__icon"
-                    src="assets/icons/heart.svg"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                  <p class="text-medium-small m-0">
-                    <strong class="text-bold-small"
-                      >Erstklassige Qualität:</strong
-                    >
-                    Jahrelange Erfahrung in der Fotografie, ein geschulter Blick
-                    fürs Detail und eine stets aktuelle technische Ausstattung
-                    garantieren euch anspruchsvolle und kreative Bilder.
-                  </p>
-                </div>
-
-                <div class="expectations__item">
-                  <img
-                    class="expectations__icon"
-                    src="assets/icons/heart.svg"
-                    alt=""
-                    aria-hidden="true"
-                  />
-                  <p class="text-medium-small m-0">
-                    <strong class="text-bold-small"
-                      >Die Daten gehören euch:</strong
-                    >
-                    Ihr erhaltet alle entstandenen Fotos digital – in voller
-                    Auflösung. So könnt ihr eure Erinnerungen jederzeit ansehen,
-                    teilen und ganz nach Wunsch verwenden – egal wo ihr gerade
-                    seid.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- RIGHT -->
-            <div class="col-lg-5">
-              <div class="expectations__white">
-                <div class="expectations__photo">
-                  <img
-                    src="assets/images/2.jpg"
-                    alt="Leistung Foto 1"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div class="expectations__photo">
-                  <img
-                    src="assets/images/18.jpg"
-                    alt="Leistung Foto 2"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6
     ╔═══════════════════════════════════════════════════════════════════════════╗
     ║  PROCESS - Секция с шагами/этапами процесса                               ║
     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
@@ -699,12 +513,11 @@
           <div class="col-lg-6 d-flex">
             <div class="process-card h-100">
               <div class="process-card__num">1</div>
+              <p class="text-bold-big process-card__text mb-0">Eintragen</p>
+
               <p class="text-medium-small process-card__text mb-0">
-                Einfach das Quiz durchklicken und die Fragen beantworten – sie
-                helfen uns, das optimale Angebot für euch zu erstellen.
-                <br /><br />
-                Nach der Eintragung wird die Reservierung für euren Hochzeitstag
-                sowie der Gutschein bei uns vermerkt.
+                Gehe das Quiz durch und sichere dir deinen Termin – kostenlos &
+                unverbindlich.
               </p>
             </div>
           </div>
@@ -713,10 +526,11 @@
           <div class="col-lg-6 d-flex">
             <div class="process-card h-100">
               <div class="process-card__num">2</div>
+              <p class="text-bold-big process-card__text mb-0">Shootingzeit</p>
+
               <p class="text-medium-small process-card__text mb-0">
-                Wir werden euch zum angegebenen Zeitpunkt telefonisch
-                kontaktieren. Gemeinsam finden wir einen Termin für das
-                kostenlose Probeshooting und besprechen alle Details.
+                30 Minuten Fotoshooting  – authentische und einzigartige
+                Aufnahmen, auch mit deinem Haustier möglich.
               </p>
             </div>
           </div>
@@ -725,12 +539,14 @@
           <div class="col-lg-6 d-flex">
             <div class="process-card h-100">
               <div class="process-card__num">3</div>
+              <p class="text-bold-big process-card__text mb-0">
+                Lieblingsbilder auswählen
+              </p>
+
               <p class="text-medium-small process-card__text mb-0">
-                Beim Probeshooting lernt ihr uns und unsere Arbeit ganz
-                unverbindlich kennen.
-                <br /><br />
-                In einer 20–30-minütigen Session halten wir eure ersten
-                gemeinsamen Momente fest – professionell und kostenlos.
+                Nach dem Fotoshooting kannst du in Ruhe deine Lieblingsbilder
+                auswählen und nur die kaufen, die dir gefallen – ganz ohne
+                Kaufzwang.
               </p>
             </div>
           </div>
@@ -739,25 +555,25 @@
           <div class="col-lg-6 d-flex">
             <div class="process-card h-100">
               <div class="process-card__num">4</div>
+              <p class="text-bold-big process-card__text mb-0">Ergebnis</p>
+
               <p class="text-medium-small process-card__text mb-0">
-                Nach dem Shooting bearbeiten wir die Bilder und stellen sie euch
-                zur Ansicht bereit. Wenn ihr euch entscheidet, uns für eure
-                Hochzeit zu buchen, erhaltet ihr alle Bilder aus dem
-                Probeshooting kostenlos dazu.
-                <br /><br />
-                Sollten unsere Hochzeitsleistungen oder die Bilder nicht zu euch
-                passen, seid ihr zu nichts verpflichtet – der Kauf der
-                Lieblingsbilder ist möglich, aber nicht verpflichtend.
+                Unvergängliche Erinnerungen in digitaler Form – jederzeit
+                abrufbar, zum Teilen mit deinen Liebsten oder zum Wiedererleben
+                besonderer Momente.
               </p>
             </div>
           </div>
         </div>
 
-        <p class="process-note text-medium-small mt-5 mb-0">
-          <span class="process-note__accent">Fertig!</span>
-          Nach unserem Kennenlern-Fotoshooting steht eurer unvergesslichen
-          Hochzeit nichts mehr im Weg.
-        </p>
+        <a
+          href="quiz-1.html"
+          class="btn-primary-custom text-bold-small hero__btn"
+          data-reveal
+          data-reveal-delay="480"
+        >
+          Jetzt Termin kostenlos anfragen
+        </a>
       </div>
     </section>
 
@@ -910,13 +726,13 @@
      ║  FOOTER - Подвал с картой Google Maps                                     ║
      ║  
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-    <footer class="footer" id="contact">
+    <!-- <footer class="footer" id="contact">
       <div class="container">
-        <div class="footer__map">
+        <div class="footer__map"> -->
           <!-- ══════════════════════════════════════════════════════════════════════════
              GOOGLE MAPS 
              ══════════════════════════════════════════════════════════════════════════ -->
-          <iframe
+          <!-- <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77935.54669950697!2d9.679071046090232!3d52.37974254152489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b00b514d494f85%3A0x425ac6d94ac4720!2z0JPQsNC90L3QvtCy0LXRgA!5e0!3m2!1sru!2sde!4v1769144411314!5m2!1sru!2sde"
             style="border: 0"
             loading="lazy"
@@ -926,7 +742,7 @@
           ></iframe>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
     <!-- SECTION 10
      ╔═══════════════════════════════════════════════════════════════════════════╗
