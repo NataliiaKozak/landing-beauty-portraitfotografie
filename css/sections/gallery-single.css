@@ -85,9 +85,9 @@
   content: '→';
 }
 
-.gallery--single .gallery__cta {
-  margin-top: 28px; /* расстояние от фото до кнопки */
-}
+/* .gallery--single .gallery__cta {
+  margin-top: 28px; 
+} */
 
 /* RESPONSIVE */
 
@@ -122,7 +122,7 @@
     height: 300px;
   }
 
-  .gallery--single .gallery__cta {
+  /* .gallery--single .gallery__cta {
     margin-top: 22px;
-  }
+  } */
 }

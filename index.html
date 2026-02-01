@@ -64,6 +64,7 @@
     <link href="css/sections/process.css" rel="stylesheet" />
     <link href="css/sections/about.css" rel="stylesheet" />
     <link href="css/sections/faq.css" rel="stylesheet" />
+    <link href="css/sections/features.css" rel="stylesheet" />
     <!-- <link href="css/sections/footer.css" rel="stylesheet" /> -->
     <link href="css/sections/legal-footer.css" rel="stylesheet" />
     <link href="css/quiz-thanks/quiz-question.css" rel="stylesheet" />
@@ -509,7 +510,7 @@
       aria-label="Ablauf"
     >
       <div class="container">
-        <!-- ИЗМЕНЕНИЕ: заголовок секции -->
+        <!-- заголовок секции -->
         <div class="row">
           <div class="col-12">
             <h2
@@ -523,7 +524,7 @@
           </div>
         </div>
 
-        <!-- ИЗМЕНЕНИЕ: сетка карточек + reveal по очереди -->
+        <!-- сетка карточек + reveal по очереди -->
         <div class="row g-4 process__grid">
           <!-- Card 1 -->
           <div class="col-lg-6 d-flex" data-reveal data-reveal-delay="120">
@@ -582,7 +583,6 @@
           </div>
         </div>
 
-        <!-- ИЗМЕНЕНИЕ: кнопка по центру + задержка -->
         <div class="process__cta" data-reveal data-reveal-delay="600">
           <a
             href="quiz-1.html"
@@ -722,8 +722,6 @@
                 <div class="faq-answer d-none" id="faq-answer-4" role="region">
                   <p class="text-medium-small mb-0">Answer</p>
                 </div>
-
-                
               </div>
             </div>
           </div>
@@ -732,16 +730,149 @@
     </section>
 
     <!-- SECTION 7
+    ╔═══════════════════════════════════════════════════════════════════════════╗
+    ║ FEATURES (4 cards + button)                             ║
+    ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+
+    <section
+      class="features section-padding bg-brand-primary"
+      aria-label="Vorteile"
+    >
+      <div class="container">
+        <div class="row g-4 g-md-5">
+          <!-- Card 1 -->
+          <div class="col-12 col-md-6 d-flex" data-reveal data-reveal-delay="0">
+            <div class="features-card w-100 h-100">
+              <div class="features-card__header">
+                <span class="features-card__icon" aria-hidden="true">
+                  <img src="assets/icons/heart2.svg" alt="" />
+                </span>
+                <h3 class="text-bold-big mb-0">
+                  Spaß und Wohlfühlen – Individuell angepasst
+                </h3>
+              </div>
+
+              <p class="text-bold-small mb-3">
+                Dein Fotoshooting für Frauen &amp; Männer – Zeit für dich!
+              </p>
+
+              <p class="text-medium-small mb-0">
+                In entspannter Atmosphäre entstehen natürliche, stilvolle und
+                authentische Bilder – ganz unabhängig davon, ob du
+                Kameraerfahrung hast oder nicht.
+              </p>
+
+              <div class="features-card__divider" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="col-12 col-md-6 d-flex"
+            data-reveal
+            data-reveal-delay="120"
+          >
+            <div class="features-card w-100 h-100">
+              <div class="features-card__header">
+                <span class="features-card__icon" aria-hidden="true">
+                  <img src="assets/icons/patch-check.svg" alt="" />
+                </span>
+                <h3 class="text-bold-big mb-0">Hohe Qualität</h3>
+              </div>
+
+              <p class="text-bold-small mb-3">
+                Regulär 240 €, jetzt kostenlos.
+              </p>
+
+              <p class="text-medium-small mb-0">
+                Mit viel Erfahrung und moderner Technik halte ich besondere
+                Momente stilvoll fest. Im Aktionszeitraum erhältst du dein
+                Fotoshooting kostenlos &amp; unverbindlich.
+              </p>
+
+              <div class="features-card__divider" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="col-12 col-md-6 d-flex"
+            data-reveal
+            data-reveal-delay="240"
+          >
+            <div class="features-card w-100 h-100">
+              <div class="features-card__header">
+                <span class="features-card__icon" aria-hidden="true">
+                  <img src="assets/icons/palette.svg" alt="" />
+                </span>
+                <h3 class="text-bold-big mb-0">Kreativ und zuverlässig</h3>
+              </div>
+
+              <p class="text-bold-small mb-3">
+                Mit Kreativität und Einfühlungsvermögen gestalte ich dein
+                Shooting individuell und persönlich.
+              </p>
+
+              <p class="text-medium-small mb-0">
+                Deine Wünsche stehen im Mittelpunkt – in entspannter Atmosphäre
+                entstehen Bilder, die deine Einzigartigkeit zeigen.
+              </p>
+
+              <div class="features-card__divider" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="col-12 col-md-6 d-flex"
+            data-reveal
+            data-reveal-delay="360"
+          >
+            <div class="features-card w-100 h-100">
+              <div class="features-card__header">
+                <span class="features-card__icon" aria-hidden="true">
+                  <img src="assets/icons/brush.svg" alt="" />
+                </span>
+                <h3 class="text-bold-big mb-0">
+                  Zufriedenheit und Styling-Tipps
+                </h3>
+              </div>
+
+              <p class="text-bold-small mb-3">
+                Deine Zufriedenheit steht an erster Stelle!
+              </p>
+
+              <p class="text-medium-small mb-0">
+                Ich berate dich zu Outfit &amp; Styling: einfache Tipps zu
+                Farben, Make-up und Haaren, damit authentische und
+                ausdrucksstarke Bilder entstehen.
+              </p>
+
+              <div class="features-card__divider" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="features__cta" data-reveal data-reveal-delay="520">
+          <a href="quiz-1.html" class="btn-primary-custom text-bold-small">
+            Deinen Gratis-Slot reservieren
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8
      ╔═══════════════════════════════════════════════════════════════════════════╗
      ║  GALLERY - Галерея изображений (gallery-swiper.js). 
      ║  Одно фото на ширину экрана       Стили -  gallery-single.css                         
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
     <section
-      class="gallery gallery--single section-padding bg-brand-primary"
+      class="gallery gallery--single section-padding bg-brand-secondary"
       aria-label="Fotogalerie"
     >
       <div class="container">
-        <div class="gallery-swiper-wrap">
+        <div class="gallery-swiper-wrap" data-reveal data-reveal-delay="0">
           <div class="swiper gallery-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -781,14 +912,15 @@
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
         </div>
-
-        <div class="gallery__cta text-bold-small text-center">
-          <a class="btn-primary-custom" href="quiz-1.html"
-            >Zum Kostenlosen Fotoshooting</a
-          >
-        </div>
       </div>
     </section>
+
+<!-- SECTION 9
+     ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║                                   ║
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+
+
 
     <!-- SECTION 8
      ╔═══════════════════════════════════════════════════════════════════════════╗
