@@ -54,17 +54,16 @@
 
     <!-- Section-specific CSS -->
     <link href="css/sections/header.css" rel="stylesheet" />
-    <link href="css/sections/photos.css" rel="stylesheet" />
     <link href="css/sections/hero.css" rel="stylesheet" />
+    <link href="css/sections/photos.css" rel="stylesheet" />
     <link href="css/sections/promotional.css" rel="stylesheet" />
     <link href="css/sections/benefits.css" rel="stylesheet" />
     <link href="css/sections/gallery-single.css" rel="stylesheet" />
-    <link href="css/sections/gallery-triple.css" rel="stylesheet" />
-    <link href="css/sections/expectations.css" rel="stylesheet" />
     <link href="css/sections/process.css" rel="stylesheet" />
     <link href="css/sections/about.css" rel="stylesheet" />
     <link href="css/sections/faq.css" rel="stylesheet" />
     <link href="css/sections/features.css" rel="stylesheet" />
+    <link href="css/sections/shooting-types.css" rel="stylesheet" />
     <!-- <link href="css/sections/footer.css" rel="stylesheet" /> -->
     <link href="css/sections/legal-footer.css" rel="stylesheet" />
     <link href="css/quiz-thanks/quiz-question.css" rel="stylesheet" />
@@ -275,7 +274,7 @@
 
     <!-- SECTION 2
      ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║  PHOTOS (3 vertical)    БЕЗ BOOTSTRAP
+     ║  PHOTOS (3 фото)    БЕЗ BOOTSTRAP
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
     <!-- <section class="photos bg-brand-primary">
       <div class="container">
@@ -297,7 +296,7 @@
 
     <!-- SECTION 2
      ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║ PHOTOS (3 vertical) НА BOOTSTRAP
+     ║ PHOTOS (3 вертикальных фото) НА BOOTSTRAP
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
     <section class="photos bg-brand-primary pt-4 pt-md-5 pb-4">
       <div class="container">
@@ -330,7 +329,7 @@
 
     <!-- SECTION 3
 ╔═══════════════════════════════════════════════════════════════════════════╗
-║  PROMOTIONAL Секция с описанием и изображением  
+║  PROMOTIONAL - Секция с описанием и изображением  
 ╚═══════════════════════════════════════════════════════════════════════════╝ -->
     <section class="promotional bg-brand-primary pt-4 pb-5 pb-lg-5">
       <div class="container">
@@ -596,7 +595,7 @@
 
     <!-- SECTION 6: FAQ
     ╔═══════════════════════════════════════════════════════════════════════════╗
-    ║ FAQ (photo + accordion)                              ║
+    ║ FAQ (фото + accordion)                              ║
     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
 
     <section class="faq section-padding bg-brand-secondary" aria-label="FAQ">
@@ -731,7 +730,7 @@
 
     <!-- SECTION 7
     ╔═══════════════════════════════════════════════════════════════════════════╗
-    ║ FEATURES (4 cards + button)                             ║
+    ║ FEATURES - 4 карточки и кнопка                                            ║
     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
 
     <section
@@ -878,7 +877,7 @@
               <div class="swiper-slide">
                 <div class="gallery-item">
                   <img
-                    src="assets/images/13.jpg"
+                    src="assets/images/25.jpg"
                     alt="Beauty & Portrait Fotoshooting"
                     loading="lazy"
                   />
@@ -898,7 +897,7 @@
               <div class="swiper-slide">
                 <div class="gallery-item">
                   <img
-                    src="assets/images/25.jpg"
+                    src="assets/images/13.jpg"
                     alt="Beauty & Portrait Fotoshooting"
                     loading="lazy"
                   />
@@ -915,99 +914,231 @@
       </div>
     </section>
 
-<!-- SECTION 9
+    <!-- SECTION 9
      ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║                                   ║
+     ║    shooting-types - карточки с фото и текстом                                   ║
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-
-
-
-    <!-- SECTION 8
-     ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║  ABOUT - Секция "О нас" / "О фотографе"                                   ║
-     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-
     <section
-      class="about section-padding bg-brand-primary"
-      aria-label="Herzfotografie"
+      class="shooting-types section-padding bg-brand-primary pb-5 pb-lg-5"
+      aria-label="Shooting Arten"
     >
       <div class="container">
-        <div class="row g-5 align-items-start">
-          <!-- LEFT: media -->
-          <div class="col-lg-7">
-            <div class="about__media">
-              <div class="about__bg" aria-hidden="true"></div>
-
-              <div class="about__media-grid">
-                <!-- big left photo -->
-                <div class="about__photo about__photo--big">
-                  <img
-                    src="assets/images/54.jpg"
-                    alt="Beauty & Portrait Fotoshooting"
-                    loading="lazy"
-                  />
-                </div>
-
-                <!-- right column: title + small photo -->
-                <div class="about__side">
-                  <h2 class="text-h2 about__title">Herzfotografie</h2>
-
-                  <div class="about__photo about__photo--small">
-                    <img
-                      src="assets/images/2.jpg"
-                      alt="Beauty & Portrait Fotoshooting"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
+        <div class="row g-4 g-md-5">
+          <!-- Card 1 (TEXT -> PHOTO как на макете) -->
+          <div
+            class="col-12 col-md-6 col-lg-3 d-flex"
+            data-reveal
+            data-reveal-delay="0"
+          >
+            <article class="shooting-types__card w-100 h-100">
+              <div class="shooting-types__content">
+                <h3 class="text-bold-big mb-2">Beauty</h3>
+                <p class="text-small mb-0">
+                  Authentische und stilvolle Beauty-Portraits, die deine
+                  natürliche Ausstrahlung hervorheben und deine schönsten Seiten
+                  festhalten.
+                </p>
               </div>
+
+              <div class="shooting-types__media">
+                <img
+                  class="shooting-types__image"
+                  src="assets/images/13.jpg"
+                  alt="Beauty"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2 (PHOTO -> TEXT как на макете) -->
+          <div
+            class="col-12 col-md-6 col-lg-3 d-flex"
+            data-reveal
+            data-reveal-delay="160"
+          >
+            <article class="shooting-types__card w-100 h-100">
+              <div class="shooting-types__media">
+                <img
+                  class="shooting-types__image"
+                  src="assets/images/8.jpg"
+                  alt="Portrait Frauen"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="shooting-types__content">
+                <h3 class="text-bold-big mb-2">Portrait Frauen</h3>
+                <p class="text-small mb-0">
+                  Individuelle und kreative Portraits für Frauen – ob elegant,
+                  natürlich oder ausdrucksstark. Bilder, die deine
+                  Einzigartigkeit zeigen.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3 (TEXT -> PHOTO как на макете) -->
+          <div
+            class="col-12 col-md-6 col-lg-3 d-flex"
+            data-reveal
+            data-reveal-delay="320"
+          >
+            <article class="shooting-types__card w-100 h-100">
+              <div class="shooting-types__content">
+                <h3 class="text-bold-big mb-2">Modelportfolio</h3>
+                <p class="text-small mb-0">
+                  Aufbau oder Erweiterung deines Modelportfolios mit
+                  professionellen Aufnahmen, die dich vielseitig und
+                  ausdrucksstark präsentieren.
+                </p>
+              </div>
+
+              <div class="shooting-types__media">
+                <img
+                  class="shooting-types__image"
+                  src="assets/images/1.jpg"
+                  alt="Modelportfolio"
+                  loading="lazy"
+                />
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 4 (PHOTO -> TEXT как на макете) -->
+          <div
+            class="col-12 col-md-6 col-lg-3 d-flex"
+            data-reveal
+            data-reveal-delay="480"
+          >
+            <article class="shooting-types__card w-100 h-100">
+              <div class="shooting-types__media">
+                <img
+                  class="shooting-types__image"
+                  src="assets/images/20.jpg"
+                  alt="Portrait Männer"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="shooting-types__content">
+                <h3 class="text-bold-big mb-2">Portrait Männer</h3>
+                <p class="text-small mb-0">
+                  Stilvolle und charismatische Portraits – für Business, Social
+                  Media oder einfach für dich.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="shooting-types__cta" data-reveal data-reveal-delay="600">
+          <a
+            href="quiz-1.html"
+            class="btn-primary-custom text-bold-small shooting-types__btn"
+          >
+            Kostenloses Fotoshooting? Jetzt Klicken
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10
+     ╔═══════════════════════════════════════════════════════════════════════════╗
+     ║  ABOUT - Секция "О нас"                                 ║
+     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+
+    <!-- SECTION 10 - ABOUT
+  
+  - Сетка 2 колонки × 2 ряда:
+    слева: верхнее фото + нижнее фото
+    справа: текст (над правым фото) + правое фото (ниже текста)
+  - Подложка теперь живёт ТОЛЬКО внутри блока правого фото (не может наехать на текст)
+-->
+    <section
+      class="about section-padding bg-brand-secondary"
+      aria-label="Beauty- & Portraitfotografie"
+    >
+      <div class="container">
+        <div class="about__grid">
+          <!-- TEXT (row 1, col 2) -->
+          <div class="about__content">
+            <div
+              class="about__divider"
+              aria-hidden="true"
+              data-reveal
+              data-reveal-delay="240"
+            ></div>
+
+            <h2 class="text-bold-big mb-2" data-reveal data-reveal-delay="240">
+              Larisiön<br />Beauty- &amp; Portraitfotografie
+            </h2>
+
+            <p
+              class="text-medium-small mb-0"
+              data-reveal
+              data-reveal-delay="240"
+            >
+              Larisiön ist dein Fotostudio für Beauty- und Portraitfotografie.
+              Mit Leidenschaft, Kreativität und Einfühlungsvermögen schaffe ich
+              Bilder, die deine Einzigartigkeit zeigen – authentisch, stilvoll
+              und zeitlos.
+            </p>
+          </div>
+
+          <!-- LEFT TOP PHOTO (row 1, col 1) -->
+          <div
+            class="about__photo about__photo--left-top"
+            data-reveal
+            data-reveal-delay="0"
+          >
+            <img
+              src="assets/images/2.jpg"
+              alt="Larisiön Foto 1"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- RIGHT PHOTO + BG (row 2, col 2) -->
+          <div class="about__right-media">
+            <!-- подложка появляется после первого фото -->
+            <div
+              class="about__bg"
+              aria-hidden="true"
+              data-reveal
+              data-reveal-delay="160"
+            ></div>
+
+            <div
+              class="about__photo about__photo--right"
+              data-reveal
+              data-reveal-delay="240"
+            >
+              <img
+                src="assets/images/13.jpg"
+                alt="Larisiön Foto 2"
+                loading="lazy"
+              />
             </div>
           </div>
 
-          <!-- RIGHT: text + button -->
-          <div class="col-lg-5">
-            <div class="about__content">
-              <h3 class="text-bold-big about__subtitle">
-                Echte Emotionen, liebevoll festgehalten!
-              </h3>
-
-              <p class="text-small about__p">
-                Wir sind euer Fotografenteam aus Weilheim (Oberbayern) und
-                halten eure Hochzeit in natürlichen, zeitlosen Bildern
-                einfühlsam fest.
-              </p>
-
-              <p class="text-small about__p">
-                Dabei stehen echte Gefühle und eure persönliche Geschichte im
-                Mittelpunkt – keine gestellten Posen, sondern ehrliche
-                Augenblicke.
-              </p>
-
-              <p class="text-small about__p">
-                Mit Erfahrung, Herz und einem Blick fürs Wesentliche begleiten
-                wir euch von der ersten Beratung bis zur finalen Bildbearbeitung
-                – ob draußen in der Natur oder im Studio in Weilheim
-                (Oberbayern).
-              </p>
-
-              <p class="text-small about__p mb-0">
-                Wir freuen uns darauf, euch kennenzulernen und eure besonderen
-                Momente für immer festzuhalten.
-              </p>
-
-              <a
-                href="quiz-1.html"
-                class="btn-primary-custom text-bold-small about__btn"
-              >
-                Zum Kostenlosen Fotoshooting
-              </a>
-            </div>
+          <!-- LEFT BOTTOM PHOTO (row 2, col 1) -->
+          <div
+            class="about__photo about__photo--left-bottom"
+            data-reveal
+            data-reveal-delay="520"
+          >
+            <img
+              src="assets/images/20.jpg"
+              alt="Larisiön Foto 3"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 9
+    <!-- SECTION 11
      ╔═══════════════════════════════════════════════════════════════════════════╗
      ║  FOOTER - Подвал с картой Google Maps                                     ║
      ║  
@@ -1030,11 +1161,11 @@
       </div>
     </footer> -->
 
-    <!-- SECTION 10
+    <!-- SECTION 12
      ╔═══════════════════════════════════════════════════════════════════════════╗
      ║  LEGAL FOOTER - Юридический подвал (ссылки)                               ║
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-    <section class="legal-footer bg-brand-primary">
+    <section class="legal-footer bg-brand-secondary">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <!-- ════════════════════════════════════════════════════════════════════════

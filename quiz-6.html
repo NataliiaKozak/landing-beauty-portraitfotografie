@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Beauty & Portrait Fotoshooting" />
     <meta name="keywords" content="Beauty & Portrait Fotoshooting, kostenlos" />
-    <title>
-      Kommst du allein oder bringst du eine Freundin mit? - Quiz
-    </title>
+
+    <title>Wofür sind deine Bilder in erster Linie gedacht? - Quiz</title>
 
     <!-- Security Headers -->
     <meta
@@ -34,8 +33,9 @@
   </head>
   <body>
     <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║  QUIZ HEADER 
+     ║  QUIZ HEADER. Стили в quiz-header.css
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+
     <header class="quiz-header bg-brand-primary">
       <div class="container">
         <div class="quiz-header__content">
@@ -43,7 +43,7 @@
           <div class="quiz-header__logo">
             <a
               href="index.html"
-              class="quiz-header__logo-text text-h2"
+              class="quiz-header__logo-text text-bold-big"
               style="color: #3d3d3d"
             >
               Logo
@@ -53,7 +53,7 @@
           <!-- ПРОГРЕСС / ПОДЗАГОЛОВОК-->
           <div class="quiz-header__progress">
             <p class="text-medium-small" style="color: #3d3d3d">
-              2 Fragen bis zum Gutschein    
+              Nur eine Frage   
             </p>
           </div>
         </div>
@@ -61,55 +61,98 @@
     </header>
 
     <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║  QUIZ QUESTION                   
+     ║  QUIZ QUESTION. Стили в quiz-question.css
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-    <section class="quiz-question bg-brand-primary" data-question-id="q4">
+    <section class="quiz-question bg-brand-primary" data-question-id="q6">
       <div class="container">
         <!-- ════════════════════════════════════════════════════════════════════════
          ЗАГОЛОВОК ВОПРОСА
          ════════════════════════════════════════════════════════════════════════ -->
         <div class="quiz-question__title">
           <h1 class="text-h2" style="color: #000000">
-            Kommst du allein oder bringst du eine Freundin mit?
+            Wofür sind deine Bilder in erster Linie gedacht? 
           </h1>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════════════════
          КАРТОЧКИ ВАРИАНТОВ (картинка + кнопка)
          ════════════════════════════════════════════════════════════════════════ -->
-        <div class="quiz-question__cards quiz-question__cards--2">
+        <div class="quiz-question__cards quiz-question__cards--4">
           <div class="quiz-question__card">
             <div class="quiz-question__image-wrapper">
               <img
-                src="assets/images/13.jpg"
-                alt="Beauty & Portrait Fotoshooting"
+                src="assets/images/8.jpg"
+                alt="Sedcard"
                 class="quiz-question__image"
               />
             </div>
             <a
-              href="quiz-5.html"
-              class="quiz-question__option"
-              data-answer="allein"
-              onclick="saveQuizAnswer('q4', 'allein')"
+              href="quiz-form.html"
+              class="quiz-question__option quiz-question__option--multiline"
+              data-answer="Sedcard"
+              onclick="saveQuizAnswer('q6', 'Sedcard')"
             >
-              <span class="quiz-question__option-text">Ich komme allein</span>
+              <span class="quiz-question__option-text"
+                >Sedcard / Model-Portfolio</span
+              >
+            </a>
+          </div>
+
+          <div class="quiz-question__card">
+            <div class="quiz-question__image-wrapper">
+              <img
+                src="assets/images/25.jpg"
+                alt="Private Nutzung"
+                class="quiz-question__image"
+              />
+            </div>
+            <a
+              href="quiz-form.html"
+              class="quiz-question__option quiz-question__option--multiline"
+              data-answer="Private"
+              onclick="saveQuizAnswer('q6', 'Private')"
+            >
+              <span class="quiz-question__option-text"
+                >Private Nutzung (z. B. für Zuhause, Geschenk)</span
+              >
             </a>
           </div>
           <div class="quiz-question__card">
             <div class="quiz-question__image-wrapper">
               <img
-                src="assets/images/51.jpg"
-                alt="Beauty & Portrait Fotoshooting"
+                src="assets/images/52.jpg"
+                alt="Social-Media-Content"
                 class="quiz-question__image"
               />
             </div>
             <a
-              href="quiz-5.html"
-              class="quiz-question__option"
-              data-answer="mit_Freundin"
-              onclick="saveQuizAnswer('q4', 'mit_Freundin')"
+              href="quiz-form.html"
+              class="quiz-question__option quiz-question__option--multiline"
+              data-answer="Social-Media-Content"
+              onclick="saveQuizAnswer('q6', 'Social-Media-Content')"
             >
-              <span class="quiz-question__option-text">Ich und meine Freundin</span>
+              <span class="quiz-question__option-text"
+                >Social-Media-Content (Instagram, TikTok, etc.)</span
+              >
+            </a>
+          </div>
+          <div class="quiz-question__card">
+            <div class="quiz-question__image-wrapper">
+              <img
+                src="assets/images/54.jpg"
+                alt="für_mich"
+                class="quiz-question__image"
+              />
+            </div>
+            <a
+              href="quiz-form.html"
+              class="quiz-question__option quiz-question__option--multiline"
+              data-answer="für_mich"
+              onclick="saveQuizAnswer('q6', 'für_mich')"
+            >
+              <span class="quiz-question__option-text"
+                >Einfach so – für mich / Selbstliebe / neue Erfahrung</span
+              >
             </a>
           </div>
         </div>
@@ -118,7 +161,6 @@
 
     <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
      ║  LEGAL FOOTER - Юридический подвал (ссылки)                               ║
-     ║  
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
     <section class="legal-footer bg-brand-primary">
       <div class="container">
