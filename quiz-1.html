@@ -19,6 +19,11 @@
       content="strict-origin-when-cross-origin"
     />
 
+    <!-- чтобы reveal работал без "мигания" -->
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
@@ -31,19 +36,17 @@
     <link href="css/quiz-thanks/quiz-question.css" rel="stylesheet" />
     <link href="css/sections/legal-footer.css" rel="stylesheet" />
   </head>
-  <body>
-    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║  QUIZ HEADER. Стили в quiz-header.css
-     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
 
+  <body>
+    <!-- QUIZ HEADER -->
     <header class="quiz-header bg-brand-primary">
       <div class="container">
         <div class="quiz-header__content">
           <!-- ЛОГОТИП -->
-          <div class="quiz-header__logo">
+          <div class="quiz-header__logo" data-reveal data-reveal-delay="0">
             <a
               href="index.html"
-              class="quiz-header__logo-text text-bold-big"
+              class="quiz-header__logo-text text-h2"
               style="color: #3d3d3d"
             >
               Logo
@@ -51,34 +54,43 @@
           </div>
 
           <!-- ПРОГРЕСС / ПОДЗАГОЛОВОК-->
-          <div class="quiz-header__progress">
-            <p class="text-medium-small" style="color: #3d3d3d">
-              Weiter zum Gutschein   
+          <div
+            class="quiz-header__progress"
+            data-reveal
+            data-reveal-delay="120"
+          >
+            <p class="text-medium-small" style="color: #000000">
+              Weiter zum Gutschein
             </p>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║  QUIZ QUESTION. Стили в quiz-question.css
-     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <!-- QUIZ QUESTION -->
     <section class="quiz-question bg-brand-primary" data-question-id="q1">
       <div class="container">
-        <!-- ════════════════════════════════════════════════════════════════════════
-         ЗАГОЛОВОК ВОПРОСА
-         ════════════════════════════════════════════════════════════════════════ -->
-        <div class="quiz-question__title">
+        <!-- TITLE -->
+        <div class="quiz-question__title" data-reveal data-reveal-delay="240">
           <h1 class="text-h2" style="color: #000000">
-            Kennst du mich bereits? 
+            Kennst du mich bereits?
           </h1>
         </div>
 
-        <!-- ════════════════════════════════════════════════════════════════════════
-         КАРТОЧКИ ВАРИАНТОВ (картинка + кнопка)
-         ════════════════════════════════════════════════════════════════════════ -->
-        <div class="quiz-question__cards quiz-question__cards--3">
-                <div class="quiz-question__card">
+        <!-- CARDS -->
+        <div
+          class="quiz-question__cards quiz-question__cards--3"
+          
+        >
+          <!-- CARD 1 -->
+          <a
+            href="quiz-2.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-reveal
+            data-reveal-delay="360"
+            data-answer="na_klar"
+            onclick="saveQuizAnswer('q1', 'na_klar')"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/2.jpg"
@@ -86,34 +98,43 @@
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-2.html"
-              class="quiz-question__option"
-              data-answer="na_klar"
-              onclick="saveQuizAnswer('q1', 'na_klar')"
-            >
-              <span class="quiz-question__option-text">Ja, na klar!</span>
-            </a>
-          </div>
 
-          <div class="quiz-question__card">
+            <div class="quiz-question__option" aria-hidden="true">
+              <span class="quiz-question__option-text">Ja, na klar!</span>
+            </div>
+          </a>
+
+          <!-- CARD 2 -->
+          <a
+            href="quiz-2.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-reveal
+            data-reveal-delay="480"
+            data-answer="vom_Hören"
+            onclick="saveQuizAnswer('q1', 'vom_Hören')"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/53.jpg"
-                alt="Schon sehr lang"
+                alt="Ja, vom Hören"
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-2.html"
-              class="quiz-question__option"
-              data-answer="vom_Hören"
-              onclick="saveQuizAnswer('q1', 'vom_Hören')"
-            >
+
+            <div class="quiz-question__option" aria-hidden="true">
               <span class="quiz-question__option-text">Ja, vom Hören</span>
-            </a>
-          </div>
-          <div class="quiz-question__card">
+            </div>
+          </a>
+
+          <!-- CARD 3 -->
+          <a
+            href="quiz-2.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-reveal
+            data-reveal-delay="600"
+            data-answer="noch_nicht"
+            onclick="saveQuizAnswer('q1', 'noch_nicht')"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/2.jpg"
@@ -121,40 +142,27 @@
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-2.html"
-              class="quiz-question__option"
-              data-answer="noch_nicht"
-              onclick="saveQuizAnswer('q1', 'noch_nicht')"
-            >
+
+            <div class="quiz-question__option" aria-hidden="true">
               <span class="quiz-question__option-text">Nein, noch nicht</span>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
-     ║  LEGAL FOOTER - Юридический подвал (ссылки)                               ║
-     ╚═══════════════════════════════════════════════════════════════════════════╝ -->
+    <!-- LEGAL FOOTER -->
     <section class="legal-footer bg-brand-primary">
       <div class="container">
         <div class="row align-items-center justify-content-center">
-          <!-- ════════════════════════════════════════════════════════════════════════
-           ЮРИДИЧЕСКИЕ ССЫЛКИ
-           Impressum, Datenschutz, Cookie Richtlinien
-           ════════════════════════════════════════════════════════════════════════ -->
           <div class="col-12 text-center">
             <nav class="legal-links">
-              <!-- ССЫЛКА - изменить href="..." и текст между > и </a> -->
               <a href="impressum.html" class="legal-link">Impressum</a>
               <span class="legal-separator">·</span>
-              <!-- ССЫЛКА - изменить href="..." и текст между > и </a> -->
               <a href="datenschutz.html" class="legal-link"
                 >Datenschutzerklärung</a
               >
               <span class="legal-separator">·</span>
-              <!-- ССЫЛКА - изменить href="..." и текст между > и </a> -->
               <a href="cookies.html" class="legal-link">Cookie Richtlinien</a>
             </nav>
           </div>
@@ -168,7 +176,9 @@
     <!-- Common JS -->
     <script src="js/common.js"></script>
 
-    <!-- Page-specific JS -->
+    <script src="js/reveal.js"></script>
+
+    <!-- Quiz JS -->
     <script src="js/quiz.js"></script>
   </body>
 </html>

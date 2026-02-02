@@ -19,6 +19,11 @@
       content="strict-origin-when-cross-origin"
     />
 
+    <!-- чтобы reveal работал без "мигания" -->
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
@@ -44,6 +49,8 @@
             <a
               href="index.html"
               class="quiz-header__logo-text text-h2"
+              data-reveal
+              data-reveal-delay="0"
               style="color: #3d3d3d"
             >
               Logo
@@ -51,8 +58,12 @@
           </div>
 
           <!-- ПРОГРЕСС / ПОДЗАГОЛОВОК-->
-          <div class="quiz-header__progress">
-            <p class="text-medium-small" style="color: #3d3d3d">
+          <div
+            class="quiz-header__progress"
+            data-reveal
+            data-reveal-delay="120"
+          >
+            <p class="text-medium-small" style="color: #000000">
               4 Fragen bis zum Gutschein 
             </p>
           </div>
@@ -70,8 +81,13 @@
          ЗАГОЛОВОК ВОПРОСА
          ════════════════════════════════════════════════════════════════════════ -->
         <div class="quiz-question__title">
-          <h1 class="text-h2" style="color: #000000">
-            Schon ein Beauty- & Portrait-Fotoshooting gehabt??
+          <h1
+            class="text-h2"
+            style="color: #000000"
+            data-reveal
+            data-reveal-delay="360"
+          >
+            Schon ein Beauty- & Portrait-Fotoshooting gehabt?
           </h1>
         </div>
 
@@ -79,7 +95,14 @@
          КАРТОЧКИ ВАРИАНТОВ (картинка + кнопка)
          ════════════════════════════════════════════════════════════════════════ -->
         <div class="quiz-question__cards quiz-question__cards--2">
-          <div class="quiz-question__card">
+          <a
+            href="quiz-3.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-answer="ja"
+            onclick="saveQuizAnswer('q2', 'ja')"
+            data-reveal
+            data-reveal-delay="360"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/13.jpg"
@@ -87,18 +110,21 @@
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-3.html"
-              class="quiz-question__option"
-              data-answer="ja"
-              onclick="saveQuizAnswer('q2', 'Ja')"
-            >
+            <div class="quiz-question__option" aria-hidden="true">
               <span class="quiz-question__option-text"
                 >Ja, das war der Hammer!</span
               >
-            </a>
-          </div>
-          <div class="quiz-question__card">
+            </div>
+          </a>
+
+          <a
+            href="quiz-3.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-answer="nein"
+            onclick="saveQuizAnswer('q2', 'nein')"
+            data-reveal
+            data-reveal-delay="520"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/15.jpg"
@@ -106,17 +132,12 @@
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-3.html"
-              class="quiz-question__option"
-              data-answer="Nein"
-              onclick="saveQuizAnswer('q2', 'Nein')"
-            >
+            <div class="quiz-question__option" aria-hidden="true">
               <span class="quiz-question__option-text"
                 >Nein, bisher noch nicht!</span
               >
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -155,6 +176,8 @@
 
     <!-- Common JS -->
     <script src="js/common.js"></script>
+
+    <script src="js/reveal.js"></script>
 
     <!-- Page-specific JS -->
     <script src="js/quiz.js"></script>

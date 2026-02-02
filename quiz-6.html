@@ -19,6 +19,11 @@
       content="strict-origin-when-cross-origin"
     />
 
+    <!-- чтобы reveal работал без "мигания" -->
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
@@ -40,7 +45,7 @@
       <div class="container">
         <div class="quiz-header__content">
           <!-- ЛОГОТИП -->
-          <div class="quiz-header__logo">
+          <div class="quiz-header__logo" data-reveal data-reveal-delay="0">
             <a
               href="index.html"
               class="quiz-header__logo-text text-bold-big"
@@ -51,8 +56,12 @@
           </div>
 
           <!-- ПРОГРЕСС / ПОДЗАГОЛОВОК-->
-          <div class="quiz-header__progress">
-            <p class="text-medium-small" style="color: #3d3d3d">
+          <div
+            class="quiz-header__progress"
+            data-reveal
+            data-reveal-delay="120"
+          >
+            <p class="text-medium-small" style="color: #000000">
               Nur eine Frage   
             </p>
           </div>
@@ -68,7 +77,7 @@
         <!-- ════════════════════════════════════════════════════════════════════════
          ЗАГОЛОВОК ВОПРОСА
          ════════════════════════════════════════════════════════════════════════ -->
-        <div class="quiz-question__title">
+        <div class="quiz-question__title" data-reveal data-reveal-delay="240">
           <h1 class="text-h2" style="color: #000000">
             Wofür sind deine Bilder in erster Linie gedacht? 
           </h1>
@@ -78,7 +87,14 @@
          КАРТОЧКИ ВАРИАНТОВ (картинка + кнопка)
          ════════════════════════════════════════════════════════════════════════ -->
         <div class="quiz-question__cards quiz-question__cards--4">
-          <div class="quiz-question__card">
+          <a
+            href="quiz-form.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-answer="sedcard"
+            onclick="saveQuizAnswer('q6', 'sedcard')"
+            data-reveal
+            data-reveal-delay="600"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/8.jpg"
@@ -86,19 +102,24 @@
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-form.html"
+            <div
               class="quiz-question__option quiz-question__option--multiline"
-              data-answer="Sedcard"
-              onclick="saveQuizAnswer('q6', 'Sedcard')"
+              aria-hidden="true"
             >
               <span class="quiz-question__option-text"
                 >Sedcard / Model-Portfolio</span
               >
-            </a>
-          </div>
+            </div>
+          </a>
 
-          <div class="quiz-question__card">
+          <a
+            href="quiz-form.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-answer="privat"
+            onclick="saveQuizAnswer('q6', 'privat')"
+            data-reveal
+            data-reveal-delay="760"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/25.jpg"
@@ -106,55 +127,65 @@
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-form.html"
+            <div
               class="quiz-question__option quiz-question__option--multiline"
-              data-answer="Private"
-              onclick="saveQuizAnswer('q6', 'Private')"
+              aria-hidden="true"
             >
-              <span class="quiz-question__option-text"
-                >Private Nutzung (z. B. für Zuhause, Geschenk)</span
-              >
-            </a>
-          </div>
-          <div class="quiz-question__card">
+              <span class="quiz-question__option-text">
+                Private Nutzung (z. B. für Zuhause, Geschenk)
+              </span>
+            </div>
+          </a>
+
+          <a
+            href="quiz-form.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-answer="social_media_content"
+            onclick="saveQuizAnswer('q6', 'social_media_content')"
+            data-reveal
+            data-reveal-delay="920"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/52.jpg"
-                alt="Social-Media-Content"
+                alt="Social Media Content"
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-form.html"
+            <div
               class="quiz-question__option quiz-question__option--multiline"
-              data-answer="Social-Media-Content"
-              onclick="saveQuizAnswer('q6', 'Social-Media-Content')"
+              aria-hidden="true"
             >
-              <span class="quiz-question__option-text"
-                >Social-Media-Content (Instagram, TikTok, etc.)</span
-              >
-            </a>
-          </div>
-          <div class="quiz-question__card">
+              <span class="quiz-question__option-text">
+                Social-Media-Content (Instagram, TikTok, etc.)
+              </span>
+            </div>
+          </a>
+
+          <a
+            href="quiz-form.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-answer="fuer_mich"
+            onclick="saveQuizAnswer('q6', 'fuer_mich')"
+            data-reveal
+            data-reveal-delay="1080"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/54.jpg"
-                alt="für_mich"
+                alt="Einfach so"
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-form.html"
+            <div
               class="quiz-question__option quiz-question__option--multiline"
-              data-answer="für_mich"
-              onclick="saveQuizAnswer('q6', 'für_mich')"
+              aria-hidden="true"
             >
-              <span class="quiz-question__option-text"
-                >Einfach so – für mich / Selbstliebe / neue Erfahrung</span
-              >
-            </a>
-          </div>
+              <span class="quiz-question__option-text">
+                Einfach so – für mich / Selbstliebe / neue Erfahrung
+              </span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -192,6 +223,8 @@
 
     <!-- Common JS -->
     <script src="js/common.js"></script>
+
+    <script src="js/reveal.js"></script>
 
     <!-- Page-specific JS -->
     <script src="js/quiz.js"></script>

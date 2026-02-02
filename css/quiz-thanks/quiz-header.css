@@ -3,20 +3,26 @@
    ============================================================================ */
 
 .quiz-header {
-  padding: 24px 0 8px 0; /* компактнее */
+  /* COMMENT: больше воздуха сверху/снизу */
+  padding: 40px 0 24px 0;
+  /* padding: 70px 0 36px 0; */
   min-height: auto;
 }
 
 .quiz-header__content {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* было 40/80 */
+
+  /* COMMENT: больше расстояние между Logo и подзаголовком */
+  /* gap: 14px; */
+  gap: 40px;
+
   align-items: flex-start;
 }
 
 /* Logo */
 .quiz-header__logo {
-  margin: 0; /* было 0 0 10px 0 */
+  margin: 0;
 }
 
 .quiz-header__logo-text {
@@ -36,13 +42,11 @@
 
 /* Progress text */
 .quiz-header__progress {
-  margin-top: 0;
-  margin-bottom: 5px;
+  margin: 0;
 }
 
 .quiz-header__progress p {
   margin: 0;
-  margin-bottom: 5px;
   font-size: var(--font-body);
   font-weight: var(--font-weight-medium);
 }
@@ -53,10 +57,12 @@
 
 @media (max-width: 768px) {
   .quiz-header {
-    padding: 18px 0 6px 0;
+    /* padding: 28px 0 18px 0; */
+    padding: 40px 0 26px 0;
   }
 
   .quiz-header__content {
-    gap: 10px;
+    /* gap: 12px; */
+    gap: 30px;
   }
 }

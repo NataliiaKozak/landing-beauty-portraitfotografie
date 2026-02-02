@@ -2,14 +2,6 @@
  * ============================================================================
  * QUIZ.JS - Логика квиза с localStorage и Google Sheets
  * ============================================================================
- *
- * Общий модуль для всех лендингов с quiz-воронкой.
- * Автоматически копируется builder.js при наличии quiz-страниц.
- *
- * Функции:
- * - Сохранение ответов в localStorage
- * - Отправка данных на Google Sheets через Apps Script
- * - Валидация формы
  */
 
 // ============================================================================
@@ -17,17 +9,11 @@
 // ============================================================================
 
 const QUIZ_CONFIG = {
-  // Google Apps Script Web App URL (заменить на реальный после настройки)
   googleScriptUrl: 'YOUR_GOOGLE_SCRIPT_URL_HERE',
-
-  // Ключ для localStorage (будет переопределён из data-атрибута)
   storageKey: 'quiz_data',
-
-  // Страница успеха
   successPage: 'thank-you.html',
 };
 
-// Переопределение конфига из data-атрибутов на body
 (function initConfig() {
   const body = document.body;
   if (body.dataset.quizStorageKey) {
@@ -45,9 +31,6 @@ const QUIZ_CONFIG = {
 // QUIZ DATA MANAGEMENT
 // ============================================================================
 
-/**
- * Инициализация данных квиза
- */
 function initQuizData() {
   const existingData = getQuizData();
   if (!existingData) {
@@ -60,9 +43,6 @@ function initQuizData() {
   }
 }
 
-/**
- * Получение данных квиза из localStorage
- */
 function getQuizData() {
   try {
     const data = localStorage.getItem(QUIZ_CONFIG.storageKey);
@@ -73,9 +53,6 @@ function getQuizData() {
   }
 }
 
-/**
- * Сохранение данных квиза в localStorage
- */
 function saveQuizDataToStorage(data) {
   try {
     localStorage.setItem(QUIZ_CONFIG.storageKey, JSON.stringify(data));
@@ -84,11 +61,6 @@ function saveQuizDataToStorage(data) {
   }
 }
 
-/**
- * Сохранение ответа на вопрос
- * @param {string} questionId - ID вопроса (q1, q2, q3, q4)
- * @param {string} answer - Ответ пользователя
- */
 function saveQuizAnswer(questionId, answer) {
   const data = getQuizData() || {
     answers: {},
@@ -102,9 +74,6 @@ function saveQuizAnswer(questionId, answer) {
   console.log(`Saved answer for ${questionId}: ${answer}`);
 }
 
-/**
- * Очистка данных квиза
- */
 function clearQuizData() {
   try {
     localStorage.removeItem(QUIZ_CONFIG.storageKey);
@@ -117,29 +86,21 @@ function clearQuizData() {
 // FORM SUBMISSION
 // ============================================================================
 
-/**
- * Обработка отправки формы
- * @param {Event} event - Событие submit
- * @returns {boolean} false для предотвращения стандартной отправки
- */
 function submitQuizForm(event) {
   event.preventDefault();
 
   const form = event.target;
   const submitBtn = form.querySelector('button[type="submit"]');
 
-  // Валидация
   if (!validateForm(form)) {
     return false;
   }
 
-  // Показать состояние загрузки
   if (submitBtn) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Wird gesendet...';
   }
 
-  // Собрать данные формы
   const formData = {
     name: form.querySelector('#form-name')?.value || '',
     email: form.querySelector('#form-email')?.value || '',
@@ -149,14 +110,12 @@ function submitQuizForm(event) {
     timestamp: new Date().toISOString(),
   };
 
-  // Добавить ответы квиза
   const quizData = getQuizData();
   if (quizData && quizData.answers) {
     formData.quizAnswers = quizData.answers;
     formData.quizStartTime = quizData.startTime;
   }
 
-  // Отправить на Google Sheets
   submitToGoogleSheets(formData)
     .then(() => {
       console.log('Form submitted successfully');
@@ -176,20 +135,13 @@ function submitQuizForm(event) {
   return false;
 }
 
-/**
- * Отправка данных на Google Sheets
- * @param {Object} data - Данные для отправки
- * @returns {Promise}
- */
 async function submitToGoogleSheets(data) {
-  // Если URL не настроен, просто логируем данные и переходим на страницу успеха
   if (QUIZ_CONFIG.googleScriptUrl === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
     console.log('Google Script URL not configured. Form data:', data);
     console.log('Quiz answers:', data.quizAnswers);
     return Promise.resolve();
   }
 
-  // Подготовка данных для Google Sheets
   const payload = {
     timestamp: data.timestamp,
     name: data.name,
@@ -202,11 +154,12 @@ async function submitToGoogleSheets(data) {
     q2: data.quizAnswers?.q2 || '',
     q3r: data.quizAnswers?.q3 || '',
     q4: data.quizAnswers?.q4 || '',
-
+    q5: data.quizAnswers?.q5 || '',
+    q6: data.quizAnswers?.q6 || '',
+    
     quiz_start_time: data.quizStartTime || '',
   };
 
-  // Отправка через fetch
   const response = await fetch(QUIZ_CONFIG.googleScriptUrl, {
     method: 'POST',
     mode: 'no-cors',
@@ -223,15 +176,9 @@ async function submitToGoogleSheets(data) {
 // FORM VALIDATION
 // ============================================================================
 
-/**
- * Валидация формы
- * @param {HTMLFormElement} form - Элемент формы
- * @returns {boolean} true если форма валидна
- */
 function validateForm(form) {
   let isValid = true;
 
-  // Проверка обязательных полей
   const requiredFields = form.querySelectorAll('[required]');
   requiredFields.forEach((field) => {
     if (field.type === 'checkbox') {
@@ -249,7 +196,6 @@ function validateForm(form) {
     }
   });
 
-  // Проверка email
   const emailField = form.querySelector('#form-email');
   if (emailField && emailField.value) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -262,45 +208,14 @@ function validateForm(form) {
   return isValid;
 }
 
-/**
- * Подсветка ошибки поля
- * @param {HTMLElement} field - Поле с ошибкой
- */
 function highlightError(field) {
   field.style.borderColor = '#ff4444';
   field.style.boxShadow = '0 0 0 2px rgba(255, 68, 68, 0.2)';
 }
 
-/**
- * Удаление подсветки ошибки
- * @param {HTMLElement} field - Поле
- */
 function removeError(field) {
   field.style.borderColor = '';
   field.style.boxShadow = '';
-}
-
-// ============================================================================
-// DATE PICKER (Flatpickr) - safe init
-// ============================================================================
-
-function initWeddingDatePicker() {
-  const dateInput = document.getElementById('wedding-date');
-  if (!dateInput) return;
-
-  // flatpickr будет доступен только на страницах, где ты его подключила
-  if (typeof flatpickr === 'undefined') return;
-
-  flatpickr(dateInput, {
-    locale: 'de',
-    dateFormat: 'd.m.Y',
-    allowInput: false,
-    disableMobile: true,
-    onChange: function (selectedDates, dateStr) {
-      // Сохраняем сразу при выборе даты.
-        saveQuizAnswer('qDate', dateStr);
-    },
-  });
 }
 
 // ============================================================================
@@ -310,10 +225,6 @@ function initWeddingDatePicker() {
 document.addEventListener('DOMContentLoaded', function () {
   initQuizData();
 
-  // Date picker (не ломает другие страницы)
-  initWeddingDatePicker();
-
-  // Добавить обработчики для снятия ошибок при вводе
   const formInputs = document.querySelectorAll(
     '.quiz-form__input, .quiz-form__checkbox',
   );

@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Beauty & Portrait Fotoshooting" />
     <meta name="keywords" content="Beauty & Portrait Fotoshooting, kostenlos" />
-    <title>
-      Kommst du allein oder bringst du eine Freundin mit? - Quiz
-    </title>
+    <title>Kommst du allein oder bringst du eine Freundin mit? - Quiz</title>
 
     <!-- Security Headers -->
     <meta
@@ -19,6 +17,11 @@
       http-equiv="Referrer-Policy"
       content="strict-origin-when-cross-origin"
     />
+
+    <!-- чтобы reveal работал без "мигания" -->
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
 
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -40,7 +43,7 @@
       <div class="container">
         <div class="quiz-header__content">
           <!-- ЛОГОТИП -->
-          <div class="quiz-header__logo">
+          <div class="quiz-header__logo" data-reveal data-reveal-delay="0">
             <a
               href="index.html"
               class="quiz-header__logo-text text-h2"
@@ -51,8 +54,12 @@
           </div>
 
           <!-- ПРОГРЕСС / ПОДЗАГОЛОВОК-->
-          <div class="quiz-header__progress">
-            <p class="text-medium-small" style="color: #3d3d3d">
+          <div
+            class="quiz-header__progress"
+            data-reveal
+            data-reveal-delay="120"
+          >
+            <p class="text-medium-small" style="color: #000000">
               2 Fragen bis zum Gutschein    
             </p>
           </div>
@@ -68,7 +75,7 @@
         <!-- ════════════════════════════════════════════════════════════════════════
          ЗАГОЛОВОК ВОПРОСА
          ════════════════════════════════════════════════════════════════════════ -->
-        <div class="quiz-question__title">
+        <div class="quiz-question__title" data-reveal data-reveal-delay="240">
           <h1 class="text-h2" style="color: #000000">
             Kommst du allein oder bringst du eine Freundin mit?
           </h1>
@@ -78,7 +85,14 @@
          КАРТОЧКИ ВАРИАНТОВ (картинка + кнопка)
          ════════════════════════════════════════════════════════════════════════ -->
         <div class="quiz-question__cards quiz-question__cards--2">
-          <div class="quiz-question__card">
+          <a
+            href="quiz-5.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-answer="allein"
+            onclick="saveQuizAnswer('q4', 'allein')"
+            data-reveal
+            data-reveal-delay="360"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/13.jpg"
@@ -86,16 +100,19 @@
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-5.html"
-              class="quiz-question__option"
-              data-answer="allein"
-              onclick="saveQuizAnswer('q4', 'allein')"
-            >
+            <div class="quiz-question__option" aria-hidden="true">
               <span class="quiz-question__option-text">Ich komme allein</span>
-            </a>
-          </div>
-          <div class="quiz-question__card">
+            </div>
+          </a>
+
+          <a
+            href="quiz-5.html"
+            class="quiz-question__card quiz-question__card--link"
+            data-answer="mit_freundin"
+            onclick="saveQuizAnswer('q4', 'mit_freundin')"
+            data-reveal
+            data-reveal-delay="520"
+          >
             <div class="quiz-question__image-wrapper">
               <img
                 src="assets/images/51.jpg"
@@ -103,15 +120,12 @@
                 class="quiz-question__image"
               />
             </div>
-            <a
-              href="quiz-5.html"
-              class="quiz-question__option"
-              data-answer="mit_Freundin"
-              onclick="saveQuizAnswer('q4', 'mit_Freundin')"
-            >
-              <span class="quiz-question__option-text">Ich und meine Freundin</span>
-            </a>
-          </div>
+            <div class="quiz-question__option" aria-hidden="true">
+              <span class="quiz-question__option-text"
+                >Ich und meine Freundin</span
+              >
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -150,6 +164,8 @@
 
     <!-- Common JS -->
     <script src="js/common.js"></script>
+
+    <script src="js/reveal.js"></script>
 
     <!-- Page-specific JS -->
     <script src="js/quiz.js"></script>
