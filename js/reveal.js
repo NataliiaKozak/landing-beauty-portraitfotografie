@@ -5,7 +5,7 @@
   const items = document.querySelectorAll('[data-reveal]');
   if (!items.length) return;
 
-  // COMMENT: если по какой-то причине не добавила в <head>, добавим тут
+  // если по какой-то причине нет в <head>, добавим тут
   document.documentElement.classList.add('js');
 
   const prefersReduced = window.matchMedia(

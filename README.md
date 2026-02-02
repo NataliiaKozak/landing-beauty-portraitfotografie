@@ -16,10 +16,12 @@
     - about.css
     - author-footer.css
     - benefits.css
-    - expectations.css
-    - footer.css
     - gallery-single.css
-    - gallery-triple.css
+    - faq.css 
+    - features.css
+    - header.css
+    - photos.css
+    - shooting-types.сss
     - hero.css
     - legal-footer.css
     - process.css
@@ -33,12 +35,15 @@
   - common.js # Shared scripts (if used across pages)
   - gallery-swiper.js # Swiper gallery initialization for the landing page
   - quiz.js # Quiz logic (saving answers, form submit, navigation)
+  - reveal.js 
 
 - index.html # Main landing page
 - quiz-1.html # Quiz
 - quiz-2.html # Quiz
 - quiz-3.html # Quiz
 - quiz-4.html # Quiz
+- quiz-5.html # Quiz
+- quiz-6.html # Quiz
 - quiz-form.html # Final registration form page
 - thank-you.html # Thank-you page after successful submission
 
