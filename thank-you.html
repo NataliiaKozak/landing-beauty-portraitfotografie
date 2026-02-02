@@ -44,7 +44,7 @@
           <!-- ════════════════════════════════════════════════════════════════════════
            ЛОГОТИП
            ════════════════════════════════════════════════════════════════════════ -->
-          <div class="quiz-header__logo">
+          <div class="quiz-header__logo" data-reveal data-reveal-delay="0">
             <a
               href="index.html"
               class="quiz-header__logo-text text-h2"
@@ -63,61 +63,96 @@
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
     <section class="thank-you-hero bg-brand-primary">
       <div class="container">
-        <div class="row align-items-center g-4">
-          <!-- LEFT -->
+        <div class="row align-items-start g-4 gx-lg-4">
+          <!-- LEFT  -->
           <div class="col-lg-6 order-2 order-lg-1">
             <div class="thank-you-hero__content">
-              <h1 class="text-bold-big thank-you-hero__title">
-                Herzlichen Glückwunsch!
+              <div
+                class="thank-you-hero__divider"
+                aria-hidden="true"
+                data-reveal
+                data-reveal-delay="120"
+              ></div>
+
+              <h1
+                class="thank-you-hero__title text-h2"
+                data-reveal
+                data-reveal-delay="360"
+              >
+                Super, vielen Dank!
               </h1>
 
-              <div class="text-medium-small thank-you-hero__description">
-                <p><strong>Deine Anfrage ist bei uns eingegangen!</strong></p>
-                <p>Wir melden uns bald bei dir.</p>
+              <div
+                class="thank-you-hero__description text-medium-small"
+                data-reveal
+                data-reveal-delay="360"
+              >
                 <p>
-                  Du hast die Möglichkeit, dich direkt in unseren Kalender
+                  Ich freue mich darauf, dich zu deinem kostenlosen Fotoshooting
+                  willkommen zu heißen!
+                </p>
+                <p>
+                  Du hast die Möglichkeit, dich direkt in meinen Kalender
                   einzutragen und dir deine bevorzugte Zeit zu sichern!
                 </p>
               </div>
 
-              <a href="#" class="btn-primary-custom">
+              <!-- Primary button (на мобилке 100% ширины) -->
+              <a
+                href="#"
+                class="btn-primary-custom thank-you-hero__primary-btn"
+                data-reveal
+                data-reveal-delay="360"
+              >
                 Jetzt Termin wählen &amp; sichern!
               </a>
 
-              <div
-                class="text-medium-small thank-you-hero__description thank-you-hero__desc-after"
-              >
-                <p>
-                  Natürlich kannst du uns auch ganz unkompliziert telefonisch
-                  oder per E-Mail erreichen – wir freuen uns auf deine
-                  Nachricht!
-                </p>
-              </div>
-
+              <!-- Secondary buttons (на мобилке каждый на своей строке) -->
               <div class="thank-you-hero__secondary-buttons">
                 <a
                   href="tel:+4912345678"
                   class="btn-outline-custom thank-you-hero__btn"
+                  data-reveal
+                  data-reveal-delay="360"
                 >
                   Jetzt anrufen
                 </a>
+
+                <a
+                  href="https://wa.me/YOUR_NUMBER"
+                  class="btn-outline-custom thank-you-hero__btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-reveal
+                  data-reveal-delay="360"
+                >
+                  WhatsApp
+                </a>
+
                 <a
                   href="mailto:info@kameramadle.de"
                   class="btn-outline-custom thank-you-hero__btn"
+                  data-reveal
+                  data-reveal-delay="360"
                 >
-                  Mail uns!
+                  Mail mir!
                 </a>
               </div>
             </div>
           </div>
 
-          <!-- RIGHT -->
+          <!-- RIGHT  -->
           <div class="col-lg-6 order-1 order-lg-2">
-            <div class="thank-you-hero__image-wrapper">
+            <div
+              class="thank-you-hero__image-wrapper"
+              data-reveal
+              data-reveal-delay="240"
+            >
               <img
-                src="assets/images/1.jpg"
+                src="assets/images/13.jpg"
                 alt="Beauty & Portrait Fotoshooting"
                 class="thank-you-hero__image"
+                loading="lazy"
               />
             </div>
           </div>
@@ -125,73 +160,111 @@
       </div>
     </section>
 
-    <section class="author-footer bg-brand-primary">
+    <!-- SECTION 2: AUTHOR/CONTACT (как на макете: фото слева, контент справа) -->
+    <section class="author-footer bg-brand-secondary">
       <div class="container">
-        <div class="section-panel bg-brand-secondary">
-          <div class="author-footer__content">
-            <h2 class="author-footer__name text-medium-big">
-              Yvonne Jadke – Fotograf Hannover
-            </h2>
-
-            <p class="author-footer__specialization text-medium-small">
-              Familienfotos, Businessportraits &amp; Hochzeitsfotografie
-            </p>
-
-            <div class="author-footer__description text-medium-small">
-              <p>
-                Wir freuen uns darauf, dein Fotograf für jede kleine Anlässe zu
-                sein – sei es für Familienfotos, Business-Portraits oder als
-                Hochzeitsfotograf. Auf eine gute Zusammenarbeit!
-              </p>
-              <p>
-                Wenn du noch Fragen hast, stehen wir dir jederzeit gerne zur
-                Verfügung.
-              </p>
+        <div class="row align-items-start g-4 gx-lg-4">
+          <!-- LEFT PHOTO  -->
+          <div class="col-lg-6 order-1 order-lg-1">
+            <div
+              class="author-footer__photo"
+              data-reveal
+              data-reveal-delay="480"
+            >
+              <img
+                src="assets/images/25.jpg"
+                alt="Fotostudio"
+                class="author-footer__image"
+                loading="lazy"
+              />
             </div>
+          </div>
 
-            <div class="author-footer__social">
-              <a
-                href="https://facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="author-footer__social-link"
-                title="Facebook"
+          <!-- RIGHT CONTENT  -->
+          <div class="col-lg-6 order-2 order-lg-2">
+            <div class="author-footer__content">
+              <div
+                class="author-footer__divider"
+                aria-hidden="true"
+                data-reveal
+                data-reveal-delay="560"
+              ></div>
+
+              <h2
+                class="author-footer__name text-h3"
+                data-reveal
+                data-reveal-delay="560"
               >
-                <img
-                  src="assets/icons/icon-facebook.svg"
-                  alt="Facebook"
-                  width="50"
-                  height="50"
-                />
-              </a>
-              <a
-                href="https://instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="author-footer__social-link"
-                title="Instagram"
+                Larisiön – Fotostudio
+              </h2>
+
+              <p
+                class="author-footer__hint text-bold-small"
+                data-reveal
+                data-reveal-delay="560"
               >
-                <img
-                  src="assets/icons/icon-instagram.svg"
-                  alt="Instagram"
-                  width="50"
-                  height="50"
-                />
-              </a>
-              <a
-                href="https://yvonne-jadke.de/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="author-footer__social-link"
-                title="Website"
+                Du kannst mich natürlich auch selbst kontaktieren, um deine
+                Chancen zu erhöhen!
+              </p>
+
+              <div
+                class="author-footer__hours text-medium-small"
+                data-reveal
+                data-reveal-delay="560"
               >
-                <img
-                  src="assets/icons/icon-website.png"
-                  alt="Website"
-                  width="50"
-                  height="50"
-                />
-              </a>
+                <p class="author-footer__hours-title">Öffnungszeiten:</p>
+                <p class="author-footer__hours-line">Mo – Sa: 09:00 – 20:00</p>
+                <p class="author-footer__hours-line">So: 10:00 – 20:00</p>
+              </div>
+
+              <div
+                class="author-footer__social"
+                data-reveal
+                data-reveal-delay="640"
+              >
+                <a
+                  href="https://facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="author-footer__social-link"
+                  title="Facebook"
+                >
+                  <img
+                    src="assets/icons/icon-facebook.svg"
+                    alt="Facebook"
+                    width="24"
+                    height="24"
+                  />
+                </a>
+                <a
+                  href="https://instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="author-footer__social-link"
+                  title="Instagram"
+                >
+                  <img
+                    src="assets/icons/icon-instagram.svg"
+                    alt="Instagram"
+                    width="24"
+                    height="24"
+                  />
+                </a>
+                <a
+                  href="https://example.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="author-footer__social-link"
+                  title="Website"
+                >
+                  <img
+                    src="assets/icons/icon-website.png"
+                    alt="Website"
+                    width="24"
+                    height="24"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -219,7 +292,7 @@
     <!-- ╔═══════════════════════════════════════════════════════════════════════════╗
      ║  LEGAL FOOTER - Юридический подвал (ссылки)                               ║
      ╚═══════════════════════════════════════════════════════════════════════════╝ -->
-    <section class="legal-footer bg-brand-primary">
+    <section class="legal-footer bg-brand-secondary">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <!-- ════════════════════════════════════════════════════════════════════════
@@ -249,6 +322,8 @@
 
     <!-- Common JS -->
     <script src="js/common.js"></script>
+
+    <script src="js/reveal.js"></script>
 
     <!-- Page-specific JS -->
     <!-- <script src="js/quiz.js"></script> -->

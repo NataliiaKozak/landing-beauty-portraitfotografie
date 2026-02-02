@@ -20,6 +20,11 @@
       content="strict-origin-when-cross-origin"
     />
 
+    <!-- чтобы reveal работал без "мигания" -->
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
@@ -44,7 +49,7 @@
           <!-- ════════════════════════════════════════════════════════════════════════
            ЛОГОТИП
            ════════════════════════════════════════════════════════════════════════ -->
-          <div class="quiz-header__logo">
+          <div class="quiz-header__logo" data-reveal data-reveal-delay="0">
             <a
               href="index.html"
               class="quiz-header__logo-text text-h2"
@@ -65,39 +70,80 @@
     <section class="quiz-form bg-brand-primary">
       <div class="container">
         <div class="row quiz-form__row-top align-items-start g-4">
-          <!-- LEFT: текст + форма -->
-          <div class="col-lg-6 order-1 order-lg-1">
+          <!-- LEFT: тексты -> (моб) фото1 -> форма -->
+          <div class="col-lg-7 order-1">
             <div class="quiz-form__content">
-              <p class="quiz-form__label text-medium-small">
-                Klasse, jetzt zum Gutschein
-              </p>
+              <div
+                class="quiz-form__divider"
+                aria-hidden="true"
+                data-reveal
+                data-reveal-delay="120"
+              ></div>
 
-              <!-- Заголовок: переносы только на десктопе (lg+), первая строка серым -->
-              <p class="quiz-form__headline text-bold-big">
-                <span class="quiz-form__headline-muted"
-                  >Trage dich jetzt ein und sichere dir</span
+              <!-- ТЕКСТЫ -->
+              <div class="quiz-form__intro">
+                <p
+                  class="quiz-form__label text-bold-big"
+                  data-reveal
+                  data-reveal-delay="240"
                 >
-                <br class="d-none d-lg-block" />
-                dein Kostenloses Pärchen-
-                <br class="d-none d-lg-block" />
-                Fotoshooting 2025
-              </p>
+                  Gutschein sichern!
+                </p>
 
-              <p class="quiz-form__text text-medium-small">
-                Schnell sein lohnt sich - wir freuen uns auf euch!
-              </p>
+                <p
+                  class="quiz-form__headline text-medium-small"
+                  data-reveal
+                  data-reveal-delay="240"
+                >
+                  Trage dich jetzt ein und sichere dir dein kostenloses
+                  Fotoshooting!
+                </p>
 
-              <p class="quiz-form__text text-medium-small">
-                Kostenlose Shootings, begrenzte Plätze.<br />
-                Buchung bis 31.12.2025
-              </p>
+                <p
+                  class="quiz-form__text text-medium-small"
+                  data-reveal
+                  data-reveal-delay="240"
+                >
+                  Die Aktion findet nur vom 10.11. – 22.12.25 statt! Schnell
+                  sein lohnt sich – ich freue mich auf dich!
+                </p>
 
+                <p
+                  class="quiz-form__text text-bold-small"
+                  data-reveal
+                  data-reveal-delay="240"
+                >
+                  Hinterlasse eine Anfrage für eine kostenlose Fotosession!
+                </p>
+              </div>
+
+              <!-- FOTO 1 (ТОЛЬКО МОБИЛКА): после текстов, до формы -->
+              <div
+                class="quiz-form__photo1 quiz-form__photo1--mobile d-lg-none"
+                data-reveal
+                data-reveal-delay="320"
+              >
+                <img
+                  src="assets/images/13.jpg"
+                  alt="Beauty & Portrait Fotoshooting"
+                  class="quiz-form__image"
+                  loading="lazy"
+                />
+              </div>
+
+              <!-- ФОРМА -->
               <form
                 id="quiz-registration-form"
                 class="quiz-form__form"
                 onsubmit="return submitQuizForm(event);"
+                data-reveal
+                data-reveal-delay="400"
               >
-                <div class="quiz-form__field">
+                <div
+                  class="quiz-form__field"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
                   <input
                     type="text"
                     name="name"
@@ -108,7 +154,11 @@
                   />
                 </div>
 
-                <div class="quiz-form__field">
+                <div
+                  class="quiz-form__field"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
                   <input
                     type="email"
                     name="email"
@@ -119,7 +169,11 @@
                   />
                 </div>
 
-                <div class="quiz-form__field">
+                <div
+                  class="quiz-form__field"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
                   <input
                     type="tel"
                     name="phone"
@@ -130,8 +184,11 @@
                   />
                 </div>
 
-                <!-- Доступность -->
-                <div class="quiz-form__field">
+                <div
+                  class="quiz-form__field"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
                   <select
                     name="availability"
                     id="form-availability"
@@ -139,7 +196,7 @@
                     required
                   >
                     <option value="" disabled selected>
-                      Wann seid ihr erreichbar
+                      Wann seid ihr erreichbar (Mehrfachauswahl)
                     </option>
                     <option value="morgens">Morgens (9-12 Uhr)</option>
                     <option value="mittags">Mittags (12-15 Uhr)</option>
@@ -148,7 +205,11 @@
                   </select>
                 </div>
 
-                <div class="quiz-form__checkbox-wrapper">
+                <div
+                  class="quiz-form__checkbox-wrapper"
+                  data-reveal
+                  data-reveal-delay="400"
+                >
                   <input
                     type="checkbox"
                     name="privacy"
@@ -160,31 +221,38 @@
                     for="form-privacy"
                     class="quiz-form__checkbox-label text-medium-small"
                   >
-                    Ich akzeptiere die
+                    Ich habe die
                     <a
                       href="datenschutz.html"
                       target="_blank"
                       class="quiz-form__privacy-link"
                     >
-                      Datenschutzbestimmungen </a
-                    >.
+                      Datenschutzhinweise
+                    </a>
+                    gelesen und verstanden.
                   </label>
                 </div>
 
                 <button
                   type="submit"
                   class="quiz-form__submit btn-primary-custom"
+                  data-reveal
+                  data-reveal-delay="400"
                 >
-                  Jetzt Gutschein sichern!
+                  Absenden
                 </button>
               </form>
             </div>
           </div>
 
-          <!-- RIGHT: фото, заголовок и параграфы-->
-          <div class="col-lg-6 order-2 order-lg-2">
+          <!-- RIGHT: Фото 1 (ТОЛЬКО ДЕСКТОП) -->
+          <div class="col-lg-5 order-2">
             <div class="quiz-form__sidebar">
-              <div class="quiz-form__image-wrapper">
+              <div
+                class="quiz-form__photo1 quiz-form__photo1--desktop d-none d-lg-block"
+                data-reveal
+                data-reveal-delay="480"
+              >
                 <img
                   src="assets/images/13.jpg"
                   alt="Beauty & Portrait Fotoshooting"
@@ -192,30 +260,19 @@
                   loading="lazy"
                 />
               </div>
-
-              <div class="quiz-form__sidebar-text">
-                <p class="text-medium-small quiz-form__note mb-2">
-                  Deine Privatsphäre ist bei uns sicher – wir schätzen dein
-                  Vertrauen.
-                </p>
-
-                <p class="text-bold-big quiz-form__important mb-2">
-                  WICHTIG! Bitte halte deinen Termin ein oder informiere uns
-                  rechtzeitig über eventuelle Änderungen.
-                </p>
-
-                <p class="text-medium-small quiz-form__important-text mb-3">
-                  Da unser Zeitplan während des Aktionszeitraums besonders
-                  straff ist, planen wir unsere Termine äußerst präzise.
-                </p>
-
-                <p class="text-medium-small quiz-form__important-text mb-0">
-                  Kurzfristige Absagen bedeuten leider, dass andere diese
-                  einzigartige Gelegenheit verpassen könnten. Vielen Dank für
-                  dein Verständnis und deine Kooperation.
-                </p>
-              </div>
             </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Фото 2 (большой блок НИЖЕ всей двухколонки) -->
+        <div class="quiz-form__section-2" data-reveal data-reveal-delay="560">
+          <div class="quiz-form__photo2">
+            <img
+              src="assets/images/25.jpg"
+              alt="Beauty & Portrait Fotoshooting"
+              class="quiz-form__image quiz-form__image--secondary"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
@@ -273,6 +330,8 @@
 
     <!-- Common JS -->
     <script src="js/common.js"></script>
+
+    <script src="js/reveal.js"></script>
 
     <!-- Page-specific JS -->
     <script src="js/quiz.js"></script>
