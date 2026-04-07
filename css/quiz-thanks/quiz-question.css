@@ -147,7 +147,7 @@
   transform: translateY(-2px);
 }
 
-/* COMMENT: На hover “появляется заливка” нижней зоны (как ты хотела) */
+/* COMMENT: На hover “появляется заливка” нижней зоны  */
 .quiz-question__card--link:hover .quiz-question__option {
   background: rgba(61, 61, 61, 0.06);
 }
@@ -164,7 +164,7 @@
 
 /* Active */
 .quiz-question__card--link:active .quiz-question__option {
-  background: rgba(226, 192, 141, 0.35);
+  background: rgba(61, 61, 61, 0.1);
 }
 
 /* ============================================================================
